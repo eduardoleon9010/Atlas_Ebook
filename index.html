@@ -418,35 +418,41 @@
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Completa el formulario</h3>
                         <p class="text-gray-600 mb-6">Y recibe instantáneamente el enlace de descarga en tu correo.</p>
 
-						<form id="atlasForm" action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST">
+						<form id="atlasForm">
 						  <!-- Datos del usuario -->
 						  <input type="text" name="Nombre" placeholder="Tu nombre" required>
 						  <input type="email" name="Email" placeholder="Tu correo" required>
 
-						  <!-- Asunto para el dueño -->
-						  <input type="hidden" name="_subject" value="📘 Nuevo registro - Atlas Interactivo de Programación en Python">
-
-						  <!-- Plantilla del correo -->
-						  <input type="hidden" name="_template" value="table">
-
-						  <!-- Anti-spam -->
-						  <input type="text" name="_honey" style="display:none">
-						  <input type="hidden" name="_captcha" value="false">
-
-						  <!-- Redirección interna de respaldo -->
-						  <input type="hidden" name="_next" value="https://heyzine.com/flip-book/818182e95c.html#page/1">
-
+						  <!-- Botón -->
 						  <button type="submit">📥 Descargar Gratis</button>
 						</form>
 
 						<script>
-						  document.getElementById("atlasForm").addEventListener("submit", function() {
-							// Espera medio segundo para no interrumpir el envío
-							setTimeout(function() {
-							  window.open("https://heyzine.com/flip-book/818182e95c.html#page/1", "_blank");
-							}, 500);
+						  document.getElementById("atlasForm").addEventListener("submit", function(e) {
+							e.preventDefault(); // Evita que el navegador haga reload
+
+							// Construir datos del formulario
+							const formData = new FormData(this);
+
+							// Enviar los datos a FormSubmit con fetch
+							fetch("https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com", {
+							  method: "POST",
+							  body: formData
+							}).then(response => {
+							  if (response.ok) {
+								// Abrir el Atlas en nueva pestaña
+								window.open("https://heyzine.com/flip-book/818182e95c.html#page/1", "_blank");
+								alert("✅ ¡Registro exitoso! Revisa tu correo.");
+							  } else {
+								alert("⚠️ Hubo un error al enviar el formulario.");
+							  }
+							}).catch(error => {
+							  console.error("Error:", error);
+							  alert("❌ No se pudo enviar el formulario.");
+							});
 						  });
 						</script>
+
 
 
 
