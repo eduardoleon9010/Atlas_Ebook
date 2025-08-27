@@ -418,67 +418,20 @@
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Completa el formulario</h3>
                         <p class="text-gray-600 mb-6">Y recibe instantáneamente el enlace de descarga en tu correo.</p>
 
-						<form id="ebookForm" action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST" class="space-y-4">
-							<!-- Configuración oculta -->
-							<input type="hidden" name="_subject" value="¡Nuevo registro en la Landing del Atlas Python!">
-							<input type="hidden" name="_autoresponse" value="¡Gracias por registrarte! Aquí tienes tu Atlas Interactivo de Programación en Python: https://heyzine.com/flip-book/818182e95c.html#page/1">
-							<input type="hidden" name="_template" value="table">
-							<input type="hidden" name="_captcha" value="false">
-							<input type="text" name="_honey" style="display:none"> <!-- Anti-spam -->
-
-							<!-- Campos visibles -->
-							<div>
-								<label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo*</label>
-								<input type="text" id="name" name="Nombre completo" required
-									   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-							</div>
-
-							<div>
-								<label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico*</label>
-								<input type="email" id="email" name="email" required
-									   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-							</div>
-
-							<div>
-								<label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono / WhatsApp</label>
-								<input type="tel" id="phone" name="Teléfono"
-									   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-							</div>
-
-							<div>
-								<label for="country" class="block text-gray-700 font-medium mb-2">País / Ciudad</label>
-								<input type="text" id="country" name="País / Ciudad"
-									   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-							</div>
-
-							<div>
-								<label for="role" class="block text-gray-700 font-medium mb-2">Ocupación</label>
-								<select id="role" name="Ocupación" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-									<option value="">Selecciona una opción</option>
-									<option value="Estudiante">Estudiante</option>
-									<option value="Docente">Docente</option>
-									<option value="Profesional">Profesional</option>
-									<option value="Emprendedor">Emprendedor</option>
-									<option value="Otro">Otro</option>
-								</select>
-							</div>
-
-							<div class="pt-2">
-								<button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-4 rounded-full font-bold text-lg btn-primary hover:from-[#005B96] hover:to-[#00C4F5] transition-all duration-300">
-									<span id="btnText">Descargar gratis ahora</span>
-									<div id="btnSpinner" class="hidden inline-block">
-										<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-											<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-											<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-										</svg>
-									</div>
-								</button>
-							</div>
-
-							<p class="text-sm text-gray-500 mt-4">
-								<i class="fas fa-lock mr-1"></i> Tu información está segura. Nunca compartiremos tus datos.
-							</p>
+						<form action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST">
+						  <input type="text" name="name" required>
+						  <input type="email" name="email" required>
+						  <input type="hidden" name="_subject" value="Tu ebook gratis: Atlas Interactivo de Programación en Python">
+						  <input type="hidden" name="_autoresponse" value="¡Gracias por registrarte! Aquí está tu ebook: https://heyzine.com/flip-book/818182e95c.html#page/1">
+						  <input type="hidden" name="_template" value="table">
+						  <!-- Anti-spam recomendado -->
+						  <input type="text" name="_honey" style="display:none">
+						  <input type="hidden" name="_captcha" value="false">
+						  <!-- (Opcional) Redirección a gracias -->
+						  <!-- <input type="hidden" name="_next" value="https://tu-dominio/Gracias.html"> -->
+						  <button type="submit">Descargar Gratis</button>
 						</form>
+
 
                     </div>
                 </div>
