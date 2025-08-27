@@ -469,60 +469,58 @@
                     
                     <div class="md:w-1/2 p-6 md:p-8">
                         <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Completa el formulario para descargar</h3>
-												<!-- ===================== -->
-						<!-- FORMULARIO DE DESCARGA -->
-						<!-- ===================== -->
+						<!-- ========================= -->
+						<!-- FORMULARIO DE REGISTRO    -->
+						<!-- ========================= -->
 						<form id="ebookForm" 
 							  action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" 
-							  method="POST"
-							  class="space-y-6 bg-white p-8 rounded-xl shadow-lg">
+							  method="POST" 
+							  class="p-8 flex flex-col space-y-4 bg-white rounded-xl shadow-lg">
 
-						  <!-- Campo: Nombre completo -->
-						  <div>
-							<label for="name" class="block text-gray-700 font-semibold mb-2">Nombre completo</label>
-							<input type="text" id="name" name="Nombre completo" required
-								   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]"
-								   placeholder="Escribe tu nombre">
-						  </div>
+							<!-- Campos ocultos de configuración de FormSubmit -->
+							<input type="hidden" name="_next" value="https://tusitio.com/gracias.html"><!-- Redirección opcional -->
+							<input type="hidden" name="_captcha" value="false"><!-- Desactivar captcha -->
+							<input type="hidden" name="_subject" value="Nuevo registro - Atlas Interactivo de Programación en Python">
 
-						  <!-- Campo: Correo electrónico -->
-						  <div>
-							<label for="email" class="block text-gray-700 font-semibold mb-2">Correo electrónico</label>
-							<input type="email" id="email" name="Correo electrónico" required
-								   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]"
-								   placeholder="tucorreo@ejemplo.com">
-						  </div>
+							<!-- Respuesta automática para el usuario -->
+							<input type="hidden" name="_autoresponse" value="¡Gracias por registrarte en el Atlas Interactivo de Programación en Python!
 
-						  <!-- Botón de envío con animación -->
-						  <button type="submit" id="submitBtn"
-								  class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition hover:opacity-90">
-							<span id="btnText">Descargar gratis ahora</span>
-							<!-- Spinner oculto hasta que se active -->
-							<span id="btnSpinner" class="hidden animate-spin border-2 border-white border-t-transparent rounded-full w-5 h-5"></span>
-						  </button>
+						👉 Accede al ebook aquí: https://heyzine.com/flip-book/818182e95c.html#page/1
 
-						  <!-- Texto de confianza -->
-						  <p class="text-sm text-gray-500 text-center">
-							Tu información está segura. Nunca compartiremos tus datos.
-						  </p>
-
-						  <!-- ===================== -->
-						  <!-- Configuración oculta de FormSubmit -->
-						  <!-- ===================== -->
-						  <input type="hidden" name="_subject" value="Nuevo registro - Atlas Interactivo de Programación en Python">
-						  <input type="hidden" name="_captcha" value="false">
-
-						  <!-- Respuesta automática para el cliente -->
-						  <input type="hidden" name="_autoresponse" value="¡Gracias por registrarte en el Atlas Interactivo de Programación en Python!
-
-						Tu ebook ya está disponible en el siguiente enlace:
-						👉 https://heyzine.com/flip-book/818182e95c.html#page/1
-
-						Si prefieres, puedes descargar el PDF directamente aquí:
-						👉 https://raw.githubusercontent.com/eduardoleon9010/Atlas_interactivo_de_programacion_en_Python/main/www.atlasinteractivodeprogramacionenpython.com.pdf
+						👉 Descarga el PDF aquí:
+						https://raw.githubusercontent.com/eduardoleon9010/Atlas_interactivo_de_programacion_en_Python/main/www.atlasinteractivodeprogramacionenpython.com.pdf
 
 						¡Disfruta tu aprendizaje!">
+
+							<!-- Campo: Nombre -->
+							<div>
+								<label for="name" class="block text-gray-700 font-semibold mb-2">Nombre</label>
+								<input type="text" id="name" name="name" required
+									   class="w-full px-4 py-3 border rounded-lg form-input focus:ring-2 focus:ring-[#00C4F5]"
+									   placeholder="Tu nombre completo">
+							</div>
+
+							<!-- Campo: Correo electrónico -->
+							<div>
+								<label for="email" class="block text-gray-700 font-semibold mb-2">Correo electrónico</label>
+								<input type="email" id="email" name="email" required
+									   class="w-full px-4 py-3 border rounded-lg form-input focus:ring-2 focus:ring-[#00C4F5]"
+									   placeholder="tuemail@ejemplo.com">
+							</div>
+
+							<!-- Botón de envío con animación -->
+							<button id="submitBtn" type="submit" 
+									class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-full font-bold flex items-center justify-center space-x-2 transition hover:opacity-90">
+								<span id="btnText">Descargar gratis ahora</span>
+								<span id="btnSpinner" class="hidden animate-spin border-2 border-white border-t-transparent rounded-full w-5 h-5"></span>
+							</button>
+
+							<!-- Texto de confianza -->
+							<p class="text-sm text-gray-500 text-center mt-2">
+								Tu información está segura. Nunca compartiremos tus datos.
+							</p>
 						</form>
+
 
                     </div>
                 </div>
