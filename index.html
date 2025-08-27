@@ -470,7 +470,7 @@
         </div>
     </section>
 
-	<!-- ===== FORMULARIO OPTIMIZADO CON AUTORESPUESTA ===== -->
+	<!-- ===== FORMULARIO OPTIMIZADO Y FUNCIONAL ===== -->
 	<section id="form" class="py-16 bg-gray-50 animate-fadeIn">
 	  <div class="container mx-auto px-4">
 		<div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -496,8 +496,8 @@
 
 			  <!-- 📧 Autorespuesta al usuario -->
 			  <input type="hidden" name="_autoresponse" 
-					 value="¡Gracias por registrarte en Atlas Python! 🎉 
-	Aquí tienes el enlace de descarga de tu ebook: 
+					 value="¡Gracias por registrarte en Atlas Python! 🎉
+	Aquí tienes el enlace de descarga de tu ebook:
 	👉 https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf">
 
 			  <!-- Campos visibles -->
@@ -513,34 +513,32 @@
 			  </button>
 			</form>
 
-			<!-- Script de entrega automática -->
+			<!-- Script: Popup con botón de descarga -->
 			<script>
 			  (function () {
 				const form = document.getElementById("ebookForm");
-
-				// 📂 URLs de recursos
-				const EBOOK_URL   = "https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf";
+				const EBOOK_URL = "https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf";
 				const FLIPBOOK_URL = "https://heyzine.com/flip-book/818182e95c.html#page/1";
-				const DRIVE_URL   = "https://drive.google.com/file/d/1krV4cH-vM7rIOW_XqYefxrDj-KE5FQHt/view?usp=sharing";
+				const DRIVE_URL = "https://drive.google.com/file/d/1krV4cH-vM7rIOW_XqYefxrDj-KE5FQHt/view?usp=sharing";
 
 				form.addEventListener("submit", function () {
 				  setTimeout(() => {
 					Swal.fire({
 					  title: '¡Registro exitoso! 🎉',
-					  html: 'Tu Atlas está listo. <br> También te enviamos un correo 📧.<br><br>' +
-							`<a href="${EBOOK_URL}" target="_blank" 
-							   class="inline-block bg-[#00C4F5] text-white px-4 py-2 rounded-lg font-bold hover:opacity-90">
-							   📕 Descargar Atlas
-							 </a>`,
+					  html: `
+						<p class="mb-4">Tu Atlas está listo.<br>
+						También te enviamos un correo 📧.</p>
+						<a href="${EBOOK_URL}" target="_blank" 
+						   class="inline-block bg-[#00C4F5] text-white px-4 py-2 rounded-lg font-bold hover:opacity-90">
+						   📕 Descargar Atlas (PDF)
+						</a>
+						<br><br>
+						<a href="${FLIPBOOK_URL}" target="_blank" class="text-blue-600 underline">📖 Ver versión flipbook</a><br>
+						<a href="${DRIVE_URL}" target="_blank" class="text-blue-600 underline">☁️ Copia en Google Drive</a>
+					  `,
 					  icon: 'success',
-					  confirmButtonText: 'Cerrar',
-					  confirmButtonColor: '#00C4F5'
-					}).then(() => {
-					  // 🔄 Abrir enlaces extra luego de 3s
-					  setTimeout(() => {
-						window.open(FLIPBOOK_URL, '_blank');
-						window.open(DRIVE_URL, '_blank');
-					  }, 3000);
+					  showConfirmButton: false,
+					  allowOutsideClick: false
 					});
 				  }, 1200);
 				});
