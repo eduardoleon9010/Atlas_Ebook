@@ -476,15 +476,15 @@
 		<div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
 		  
 		  <!-- Encabezado -->
-		  <div class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] p-6 text-center">
+		  <div class="bg-gradient-to-r from-primary-light to-primary p-6 text-center">
 			<h2 class="text-3xl font-bold text-white mb-2">¡Obtén tu Atlas Interactivo GRATIS!</h2>
 			<p class="text-white opacity-90">Completa el formulario y recibe instantáneamente tu ebook</p>
 		  </div>
-
+		  
 		  <!-- Formulario -->
 		  <div class="p-6 md:p-8">
 			<form id="ebookForm"
-				  action="https://formsubmit.co/TU_CORREO@gmail.com"
+				  action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com"
 				  method="POST"
 				  target="hidden_iframe"
 				  class="space-y-4">
@@ -494,32 +494,32 @@
 			  <input type="hidden" name="_captcha" value="false">
 			  <input type="hidden" name="_template" value="table">
 
-			  <!-- 📧 Autorespuesta al usuario -->
+			  <!-- Autorespuesta al usuario -->
 			  <input type="hidden" name="_autoresponse" 
 					 value="¡Gracias por registrarte en Atlas Python! 🎉
-	Aquí tienes el enlace de descarga de tu ebook:
+	Aquí tienes tu Atlas:
 	👉 https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf">
 
-			  <!-- Campos visibles -->
+			  <!-- Campos -->
 			  <input type="text" name="name" placeholder="Tu nombre" required
-					 class="form-input w-full p-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-[#00C4F5]">
+					 class="form-input w-full p-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-primary">
 			  
 			  <input type="email" name="email" placeholder="Tu correo" required
-					 class="form-input w-full p-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-[#00C4F5]">
+					 class="form-input w-full p-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-primary">
 
 			  <button type="submit"
-					  class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
+					  class="w-full bg-gradient-to-r from-primary-light to-primary text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
 				Descargar gratis ahora
 			  </button>
 			</form>
 
-			<!-- Script: Popup con botón de descarga -->
+			<!-- Script -->
 			<script>
 			  (function () {
 				const form = document.getElementById("ebookForm");
-				const EBOOK_URL = "https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf";
+				const EBOOK_URL   = "https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf";
 				const FLIPBOOK_URL = "https://heyzine.com/flip-book/818182e95c.html#page/1";
-				const DRIVE_URL = "https://drive.google.com/file/d/1krV4cH-vM7rIOW_XqYefxrDj-KE5FQHt/view?usp=sharing";
+				const DRIVE_URL   = "https://drive.google.com/file/d/1krV4cH-vM7rIOW_XqYefxrDj-KE5FQHt/view?usp=sharing";
 
 				form.addEventListener("submit", function () {
 				  setTimeout(() => {
@@ -529,7 +529,7 @@
 						<p class="mb-4">Tu Atlas está listo.<br>
 						También te enviamos un correo 📧.</p>
 						<a href="${EBOOK_URL}" target="_blank" 
-						   class="inline-block bg-[#00C4F5] text-white px-4 py-2 rounded-lg font-bold hover:opacity-90">
+						   class="inline-block bg-[#00C4F5] text-white px-4 py-2 rounded-lg font-bold">
 						   📕 Descargar Atlas (PDF)
 						</a>
 						<br><br>
@@ -538,14 +538,14 @@
 					  `,
 					  icon: 'success',
 					  showConfirmButton: false,
-					  allowOutsideClick: false
+					  allowOutsideClick: true
 					});
-				  }, 1200);
+				  }, 1000);
 				});
 			  })();
 			</script>
 
-			<!-- Enlace de descarga manual -->
+			<!-- Enlace manual de respaldo -->
 			<div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-200 text-center">
 			  <p class="text-sm text-green-800 mb-2">¿Problemas con el formulario?</p>
 			  <a href="https://heyzine.com/flip-book/818182e95c.html#page/1" 
