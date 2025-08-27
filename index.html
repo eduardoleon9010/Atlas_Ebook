@@ -379,107 +379,63 @@
         </div>
     </section>
 
-    <!-- Sección del formulario de registro (con campos requeridos) -->
-    <section id="form" class="bg-[#005B96] py-16 fade-in" style="animation-delay: 1.1s;">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 bg-gradient-to-b from-[#00C4F5] to-[#005B96] p-8 text-white flex flex-col justify-center">
-                        <h2 class="text-3xl font-bold mb-4">Descarga tu Atlas Interactivo GRATIS</h2>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2"></i>
-                                <span>Guía completa de Python desde cero</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2"></i>
-                                <span>Contenido interactivo y visual</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2"></i>
-                                <span>Ejercicios prácticos con soluciones</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2"></i>
-                                <span>Proyectos para tu portafolio</span>
-                            </li>
-                        </ul>
-                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
-                            <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Eduardo León" class="w-12 h-12 rounded-full mr-4 border-2 border-white">
-                                <div>
-                                    <p class="font-bold">Eduardo León (PhD c.)</p>
-                                    <p class="text-sm opacity-90">Autor y Desarrollador Python</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2 p-8 md:p-10">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Completa el formulario</h3>
-                        <p class="text-gray-600 mb-6">Y recibe instantáneamente el enlace de descarga en tu correo.</p>
-                        
-                        <form id="ebookForm" action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST" class="space-y-4">
-                            <!-- Configuración oculta -->
-                            <input type="hidden" name="_subject" value="¡Nuevo registro en la Landing del Atlas Python!">
-                            <input type="hidden" name="_autoresponse" value="¡Gracias por registrarte! Aquí tienes tu Atlas Interactivo de Programación en Python: https://heyzine.com/flip-book/818182e95c.html#page/1">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="https://tu-dominio.com/gracias.html">
-                            <input type="text" name="_honey" style="display:none">
-                            
-                            <!-- Campos visibles -->
-                            <div>
-                                <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo*</label>
-                                <input type="text" id="name" name="Nombre completo" required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico*</label>
-                                <input type="email" id="email" name="email" required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-                            </div>
-                            
-                            <div>
-                                <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono / WhatsApp</label>
-                                <input type="tel" id="phone" name="Teléfono"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-                            </div>
-                            
-                            <div>
-                                <label for="country" class="block text-gray-700 font-medium mb-2">País / Ciudad</label>
-                                <input type="text" id="country" name="País / Ciudad"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-                            </div>
-                            
-                            <div>
-                                <label for="role" class="block text-gray-700 font-medium mb-2">Ocupación</label>
-                                <select id="role" name="Ocupación" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
-                                    <option value="">Selecciona una opción</option>
-                                    <option value="Estudiante">Estudiante</option>
-                                    <option value="Docente">Docente</option>
-                                    <option value="Profesional">Profesional</option>
-                                    <option value="Emprendedor">Emprendedor</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                            </div>
-                            
-                            <div class="pt-2">
-                                <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-4 rounded-full font-bold text-lg btn-primary hover:from-[#005B96] hover:to-[#00C4F5] transition-all duration-300">
-                                    <span id="btnText">Descargar gratis ahora</span>
-                                    <div id="btnSpinner" class="hidden inline-block">
-                                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                        </svg>
-                                    </div>
-                                </button>
-                            </div>
-                            
-                            <p class="text-sm text-gray-500 mt-4">
-                                <i class="fas fa-lock mr-1"></i> Tu información está segura. Nunca compartiremos tus datos.
-                            </p>
-                        </form>
+<form id="ebookForm" action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST" enctype="multipart/form-data" class="space-y-4">
+    <!-- Configuración oculta -->
+    <input type="hidden" name="_subject" value="¡Nuevo registro en la Landing del Atlas Python!">
+    <input type="hidden" name="_autoresponse" value="¡Gracias por registrarte! Aquí tienes tu Atlas Interactivo de Programación en Python: https://heyzine.com/flip-book/818182e95c.html#page/1">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Campos visibles -->
+    <div>
+        <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo*</label>
+        <input type="text" id="name" name="Nombre completo" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+    </div>
+
+    <div>
+        <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico*</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+    </div>
+
+    <div>
+        <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono / WhatsApp</label>
+        <input type="tel" id="phone" name="Teléfono" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+    </div>
+
+    <div>
+        <label for="country" class="block text-gray-700 font-medium mb-2">País / Ciudad</label>
+        <input type="text" id="country" name="País / Ciudad" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+    </div>
+
+    <div>
+        <label for="role" class="block text-gray-700 font-medium mb-2">Ocupación</label>
+        <select id="role" name="Ocupación" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+            <option value="">Selecciona una opción</option>
+            <option value="Estudiante">Estudiante</option>
+            <option value="Docente">Docente</option>
+            <option value="Profesional">Profesional</option>
+            <option value="Emprendedor">Emprendedor</option>
+            <option value="Otro">Otro</option>
+        </select>
+    </div>
+
+    <div class="pt-2">
+        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-4 rounded-full font-bold text-lg btn-primary hover:from-[#005B96] hover:to-[#00C4F5] transition-all duration-300">
+            <span id="btnText">Descargar gratis ahora</span>
+            <div id="btnSpinner" class="hidden inline-block">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+        </button>
+    </div>
+
+    <p class="text-sm text-gray-500 mt-4">
+        <i class="fas fa-lock mr-1"></i> Tu información está segura. Nunca compartiremos tus datos.
+    </p>
+</form>
                     </div>
                 </div>
             </div>
