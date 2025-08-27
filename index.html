@@ -132,36 +132,36 @@
 			<p class="text-gray-600 mb-6">Impulsa tus habilidades en Python con nuestro Atlas Interactivo, ¡listo para ti en un clic!</p>
 
 
-			<script>
-			document.getElementById("atlasForm").addEventListener("submit", function(e) {
-			  e.preventDefault();
-			  const formData = new FormData(this);
+				<script>
+				document.getElementById("atlasForm").addEventListener("submit", function(e) {
+				  e.preventDefault();
+				  const formData = new FormData(this);
 
-			  // 🔹 Enviar datos al correo del dueño
-			  fetch("https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com", {
-				method: "POST",
-				body: formData
-			  }).then(response => {
-				if (response.ok) {
-				  // 🔹 Abrir Heyzine inmediatamente
-				  window.open("https://heyzine.com/flip-book/818182e95c.html#page/1", "_blank");
+				  // 🔹 Enviar datos al correo del dueño
+				  fetch("https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com", {
+					method: "POST",
+					body: formData
+				  }).then(response => {
+					if (response.ok) {
+					  // 🔹 Abrir Heyzine inmediatamente
+					  window.open("https://heyzine.com/flip-book/818182e95c.html#page/1", "_blank");
 
-				  // 🔹 Forzar descarga directa del PDF en la misma acción de usuario
-				  const pdfWindow = window.open("https://raw.githubusercontent.com/eduardoleon9010/Atlas_interactivo_de_programacion_en_Python/main/www.atlasinteractivodeprogramacionenpython.com.pdf", "_blank");
-				  if (!pdfWindow) {
-					alert("⚠️ Activa las ventanas emergentes para permitir la descarga.");
-				  }
+					  // 🔹 Forzar descarga directa del PDF en la misma acción de usuario
+					  const pdfWindow = window.open("https://raw.githubusercontent.com/eduardoleon9010/Atlas_interactivo_de_programacion_en_Python/main/www.atlasinteractivodeprogramacionenpython.com.pdf", "_blank");
+					  if (!pdfWindow) {
+						alert("⚠️ Activa las ventanas emergentes para permitir la descarga.");
+					  }
 
-				  alert("✅ Registro exitoso. El Atlas se abrió y el PDF se descargó.");
-				} else {
-				  alert("⚠️ Error al enviar los datos. Intenta de nuevo por favor.");
-				}
-			  }).catch(err => {
-				console.error(err);
-				alert("❌ No se pudo enviar el formulario. Revisa tu conexión.");
-			  });
-			});
-			</script>
+					  alert("✅ Registro exitoso. El Atlas se abrió y el PDF se descargó.");
+					} else {
+					  alert("⚠️ Error al enviar los datos. Intenta de nuevo por favor.");
+					}
+				  }).catch(err => {
+					console.error(err);
+					alert("❌ No se pudo enviar el formulario. Revisa tu conexión.");
+				  });
+				});
+				</script>
 
 
 
