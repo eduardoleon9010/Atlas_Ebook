@@ -472,54 +472,48 @@
 						<!-- ========================= -->
 						<!-- FORMULARIO DE REGISTRO    -->
 						<!-- ========================= -->
-						<form id="ebookForm" 
-							  action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" 
-							  method="POST" 
-							  class="p-8 flex flex-col space-y-4 bg-white rounded-xl shadow-lg">
+    
+						<!-- Configuración oculta -->
+						<input type="hidden" name="_next" value="https://heyzine.com/flip-book/818182e95c.html#page/1">
+						<input type="hidden" name="_captcha" value="false">
+						<input type="hidden" name="_subject" value="Nuevo registro - Atlas Interactivo Python">
 
-							<!-- Campos ocultos de configuración de FormSubmit -->
-							<input type="hidden" name="_next" value="https://heyzine.com/flip-book/818182e95c.html#page/1"><!-- Redirección opcional -->
-							<input type="hidden" name="_captcha" value="false"><!-- Desactivar captcha -->
-							<input type="hidden" name="_subject" value="Nuevo registro - Atlas Interactivo de Programación en Python">
+						<!-- Respuesta automática al usuario -->
+						<input type="hidden" name="_autoresponse" 
+							value="¡Gracias por registrarte en el Atlas Interactivo de Programación en Python!
 
-							<!-- Respuesta automática para el usuario -->
-							<input type="hidden" name="_autoresponse" value="¡Gracias por registrarte en el Atlas Interactivo de Programación en Python!
+					👉 Accede al flipbook: https://heyzine.com/flip-book/818182e95c.html#page/1
+					👉 Descarga el PDF: https://www.atlasinteractivodeprogramacionenpython.com.pdf
+					">
 
-						👉 Accede al ebook aquí: https://heyzine.com/flip-book/818182e95c.html#page/1
+						<!-- Campo Nombre -->
+						<div>
+							<label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
+							<input type="text" id="name" name="name" required 
+								   class="w-full px-4 py-3 border rounded-lg form-input focus:ring-2 focus:ring-[#00C4F5]">
+						</div>
 
-						👉 Descarga el PDF aquí:
-						https://raw.githubusercontent.com/eduardoleon9010/Atlas_interactivo_de_programacion_en_Python/main/www.atlasinteractivodeprogramacionenpython.com.pdf
+						<!-- Campo Correo -->
+						<div>
+							<label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+							<input type="email" id="email" name="email" required 
+								   class="w-full px-4 py-3 border rounded-lg form-input focus:ring-2 focus:ring-[#00C4F5]">
+						</div>
 
-						¡Disfruta tu aprendizaje!">
+						<!-- Botón -->
+						<button id="submitBtn" type="submit" 
+								class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-lg font-bold flex items-center justify-center">
+							<span id="btnText">Descargar gratis ahora</span>
+							<svg id="btnSpinner" class="hidden animate-spin h-5 w-5 ml-2 text-white"
+								 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+								<circle class="opacity-25" cx="12" cy="12" r="10"
+										stroke="currentColor" stroke-width="4"></circle>
+								<path class="opacity-75" fill="currentColor"
+									  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+							</svg>
+						</button>
+					</form>
 
-							<!-- Campo: Nombre -->
-							<div>
-								<label for="name" class="block text-gray-700 font-semibold mb-2">Nombre</label>
-								<input type="text" id="name" name="name" required
-									   class="w-full px-4 py-3 border rounded-lg form-input focus:ring-2 focus:ring-[#00C4F5]"
-									   placeholder="Tu nombre completo">
-							</div>
-
-							<!-- Campo: Correo electrónico -->
-							<div>
-								<label for="email" class="block text-gray-700 font-semibold mb-2">Correo electrónico</label>
-								<input type="email" id="email" name="email" required
-									   class="w-full px-4 py-3 border rounded-lg form-input focus:ring-2 focus:ring-[#00C4F5]"
-									   placeholder="tuemail@ejemplo.com">
-							</div>
-
-							<!-- Botón de envío con animación -->
-							<button id="submitBtn" type="submit" 
-									class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-full font-bold flex items-center justify-center space-x-2 transition hover:opacity-90">
-								<span id="btnText">Descargar gratis ahora</span>
-								<span id="btnSpinner" class="hidden animate-spin border-2 border-white border-t-transparent rounded-full w-5 h-5"></span>
-							</button>
-
-							<!-- Texto de confianza -->
-							<p class="text-sm text-gray-500 text-center mt-2">
-								Tu información está segura. Nunca compartiremos tus datos.
-							</p>
-						</form>
 
 
                     </div>
@@ -911,7 +905,7 @@
                         }).then(() => {
                             // Abrir los recursos en nuevas pestañas
                             window.open('https://heyzine.com/flip-book/818182e95c.html#page/1', '_blank');
-                            window.open('https://raw.githubusercontent.com/eduardoleon9010/Atlas_interactivo_de_programacion_en_Python/main/www.atlasinteractivodeprogramacionenpython.com.pdf', '_blank');
+                            window.open('https://github.com/eduardoleon9010/Atlas_Ebook/blob/main/www.atlasinteractivodeprogramacionenpython.com.pdf', '_blank');
                             
                             // En producción, aquí se enviaría el formulario realmente
                             // form.submit();
