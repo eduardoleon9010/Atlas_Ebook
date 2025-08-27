@@ -432,89 +432,64 @@
         </div>
     </section>
     
-<!-- ===== INICIO: BLOQUE DEL FORMULARIO (Reemplazar solo la sección del formulario) ===== -->
+<!-- ===== INICIO: BLOQUE DEL FORMULARIO (REEMPLAZAR SÓLO ESTA SECCIÓN) ===== -->
 <section id="form" class="container mx-auto px-4 py-12">
   <div class="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-md">
     <h2 class="text-2xl font-bold mb-4">Obtén tu Atlas Interactivo</h2>
     <p class="text-gray-600 mb-6">Completa este formulario para recibir el enlace de descarga del ebook.</p>
 
-    <!-- Formulario principal -->
-    <form id="ebookForm" novalidate>
+    <!--
+      Nota rápida:
+      - Reemplaza FORM_ACTION por "https://formsubmit.co/TU_EMAIL@ejemplo.com"
+      - Asegúrate de verificar el correo en el mensaje que te envía FormSubmit (es obligatorio).
+    -->
+    <form id="ebookForm" name="ebookForm" method="POST" action="https://formsubmit.co/TU_EMAIL@ejemplo.com" target="hidden_iframe" novalidate>
       <!-- Campo nombre -->
       <div class="mb-4">
         <label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          minlength="2"
-          class="form-input w-full mt-2 p-3 border rounded-md form-input"
-          placeholder="Tu nombre completo"
-          aria-describedby="nameHelp"
-        />
+        <input id="name" name="name" type="text" required minlength="2" class="form-input w-full mt-2 p-3 border rounded-md" placeholder="Tu nombre completo" aria-describedby="nameHelp" />
         <p id="nameHelp" class="text-xs text-gray-500 mt-1">Escribe tu nombre tal como quieres que aparezca en la descarga.</p>
       </div>
 
       <!-- Campo correo -->
       <div class="mb-4">
         <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          class="form-input w-full mt-2 p-3 border rounded-md"
-          placeholder="tu@correo.com"
-        />
+        <input id="email" name="email" type="email" required class="form-input w-full mt-2 p-3 border rounded-md" placeholder="tu@correo.com" />
       </div>
 
-      <!-- Campo organización/rol opcional -->
+      <!-- Organización/rol opcional -->
       <div class="mb-4">
         <label for="role" class="block text-sm font-medium text-gray-700">Organización / Rol (opcional)</label>
-        <input
-          id="role"
-          name="role"
-          type="text"
-          class="form-input w-full mt-2 p-3 border rounded-md"
-          placeholder="Ej. Profesor, Estudiante, Desarrollador..."
-        />
+        <input id="role" name="role" type="text" class="form-input w-full mt-2 p-3 border rounded-md" placeholder="Ej. Profesor, Estudiante..." />
       </div>
 
       <!-- Mensaje opcional -->
       <div class="mb-4">
         <label for="message" class="block text-sm font-medium text-gray-700">Mensaje (opcional)</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          class="form-input w-full mt-2 p-3 border rounded-md"
-          placeholder="Si quieres, deja un comentario o pregunta..."
-        ></textarea>
+        <textarea id="message" name="message" rows="4" class="form-input w-full mt-2 p-3 border rounded-md" placeholder="Si quieres, deja un comentario o pregunta..."></textarea>
       </div>
 
       <!-- Consentimiento -->
       <div class="mb-6 flex items-start gap-3">
         <input id="consent" name="consent" type="checkbox" required class="mt-1" />
-        <label for="consent" class="text-sm text-gray-700">
-          Acepto recibir el ebook y comunicaciones relacionadas. Puedes cancelar en cualquier momento.
-        </label>
+        <label for="consent" class="text-sm text-gray-700">Acepto recibir el ebook y comunicaciones relacionadas.</label>
       </div>
 
-      <!-- Campos ocultos para servicio de formularios (puedes cambiar si usas otro) -->
-      <!-- _captcha=false evita la verificación por FormSubmit; quítalo si prefieres captcha -->
+      <!-- HONEYPOT (campo oculto para bots) -->
+      <div style="display:none;">
+        <label>Si ves esto, no rellenes</label>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <!-- Campos ocultos para FormSubmit / comportamiento -->
+      <!-- _next: a dónde redirigir después del envío (opcional) -->
+      <input type="hidden" name="_next" value="https://tu-sitio.com/gracias.html" />
       <input type="hidden" name="_subject" value="Descarga: Atlas Interactivo" />
       <input type="hidden" name="_captcha" value="false" />
 
       <!-- Botón enviar -->
       <div class="flex items-center gap-4">
-        <button
-          id="submitBtn"
-          type="submit"
-          class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-full font-semibold btn-primary"
-          aria-live="polite"
-        >
-          <!-- Texto y spinner manipulados por JS -->
+        <button id="submitBtn" type="submit" class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-full font-semibold btn-primary" aria-live="polite">
           <span id="btnText">Enviar y descargar</span>
           <svg id="btnSpinner" class="hidden animate-spin inline-block w-5 h-5 ml-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -525,39 +500,33 @@
         <div id="statusText" class="text-sm text-gray-600 hidden">Procesando...</div>
       </div>
     </form>
+
+    <!-- IFRAME OCULTO para fallback (envío por POST que evita problemas con redirects/CORS) -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
   </div>
 </section>
 
-<!-- ===== FIN: BLOQUE DEL FORMULARIO ===== -->
-
-<!-- ===== INICIO: SCRIPT DE CONTROL DEL FORMULARIO (documentado en español) ===== -->
+	<!-- ===== INICIO: SCRIPT DEL FORMULARIO ===== -->
 <script>
 /*
-  Script para manejo del formulario "ebookForm".
-  - Valida campos HTML5.
-  - Envía usando fetch (FormData) a FORM_ACTION.
-  - Muestra alertas con SweetAlert2 (ya incluida en tu página).
-  - Descarga automáticamente el PDF al completar correctamente.
-  - Comentarios internos en español para que entiendas cada bloque.
+  Comportamiento combinado para envío:
+  - Intentamos enviar por fetch (fetch puede fallar por CORS si FormSubmit redirige)
+  - Si fetch falla o la respuesta no es OK, dejamos que el navegador haga el envío clásico
+    hacia el 'action' del form (target="hidden_iframe"), así FormSubmit maneja la redirect y entrega el correo.
+  - Comentarios en español explicando cada parte.
 */
 
-(function () {
-  // Cambia este valor por el endpoint real que uses (FormSubmit o tu API).
-  // Ejemplo para FormSubmit: "https://formsubmit.co/TU_EMAIL@ejemplo.com"
-  const FORM_ACTION = "https://formsubmit.co/TU_EMAIL@ejemplo.com";
-
-  // Nombre del archivo que quieres que se descargue tras el submit.
-  // Si tu PDF está en otra ruta (Drive, S3, etc.) coloca la URL absoluta.
-  const EBOOK_FILENAME = "atlas-python.pdf";
-
-  // Referencias a elementos del DOM
+(function() {
+  // URL pública del ebook (si quieres descarga automática). Cambia si corresponde.
+  const EBOOK_URL = "www.atlasinteractivodeprogramacionenpython.com.pdf"; // -> URL absoluta está en GitHug Pages.
   const form = document.getElementById("ebookForm");
   const submitBtn = document.getElementById("submitBtn");
   const btnText = document.getElementById("btnText");
   const btnSpinner = document.getElementById("btnSpinner");
   const statusText = document.getElementById("statusText");
+  const hiddenFrame = document.getElementById("hidden_iframe");
 
-  // Utilidad: activar/desactivar estado de carga
+  // Muestra/oculta estado de carga
   function setLoading(isLoading) {
     if (isLoading) {
       submitBtn.disabled = true;
@@ -572,97 +541,140 @@
     }
   }
 
-  // Utilidad: función para descargar archivo (si es una ruta pública)
-  function triggerDownload(url, filename) {
-    // crear enlace temporal
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename || "";
-    document.body.appendChild(a);
-    a.click();
-    // limpiar
-    setTimeout(() => {
-      document.body.removeChild(a);
-    }, 500);
+  // Descargar archivo (intento)
+  function triggerDownload(url) {
+    try {
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => document.body.removeChild(a), 500);
+    } catch (err) {
+      console.warn("Error al iniciar descarga automática:", err);
+    }
   }
 
-  // Manejo del evento submit
-  form.addEventListener("submit", async function (e) {
+  // LISTA DE ACCIONES DE FALLBACK: si el envío FETCH falla, usaremos el envío normal mediante el iframe
+  form.addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    // Validación HTML5 nativa
+    // Validación nativa: si no es válida, muestra errores del navegador
     if (!form.checkValidity()) {
-      // Si no es válido, mostrar mensajes nativos y marcar campos
-      // Forzamos 'reportValidity' para mostrar mensaje al usuario
       form.reportValidity();
       return;
     }
 
-    // Construir FormData para envío
+    // Evitar enviar si el honeypot está relleno (es bot)
+    const honey = form.querySelector('input[name="_honey"]');
+    if (honey && honey.value) {
+      // Silent fail para bots
+      return;
+    }
+
+    // Construimos FormData para el fetch
     const data = new FormData(form);
 
-    // Opcional: puedes añadir campos extra antes de enviar
-    data.append("_timestamp", new Date().toISOString());
+    // Añadimos timestamp (opcional)
+    data.append("_ts", new Date().toISOString());
+
+    // PRIMER INTENTO: enviar con fetch para tener control y mostrar mensajes dinámicos
+    setLoading(true);
 
     try {
-      setLoading(true);
+      // Nota: Use la URL del form que se uso en (FormSubmit)
+      const action = form.getAttribute("https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com") || "";
 
-      // Enviar con fetch al endpoint definido (POST)
-      const response = await fetch(FORM_ACTION, {
+      // Si no hay action definido, hacemos fallback inmediato a envío clásico
+      if (!action) {
+        throw new Error("No se ha configurado el atributo action del formulario.");
+      }
+
+      const resp = await fetch(action, {
         method: "POST",
         body: data,
-        // Si tu endpoint requiere encabezados específicos, agrégalos aquí.
+        // No se añaden headers para que FormData funcione correctamente
       });
 
-      // Si usas FormSubmit, una redirect 200-302 es esperable.
-      if (!response.ok) {
-        // Manejo básico de error: mostrar alerta y volver al estado inicial.
-        const text = await response.text().catch(() => "");
-        Swal.fire({
-          icon: "error",
-          title: "Error al enviar",
-          html: `<p>No se pudo procesar la solicitud. Por favor intenta más tarde.</p><pre style="white-space:pre-wrap;">${response.status} ${response.statusText}</pre>`,
+      // Si la respuesta es satisfactoria (200..299) intentamos notificar y descargar
+      if (resp.ok) {
+        // Mostrar éxito
+        await Swal.fire({
+          icon: "success",
+          title: "¡Registrado!",
+          text: "Revisa tu correo (verifica spam).",
+          confirmButtonText: "Descargar ahora"
         });
-        console.error("Error envío formulario:", response.status, response.statusText, text);
+
+        // Intento de descarga automática (si EBOOK_URL accesible)
+        triggerDownload(EBOOK_URL);
+
+        form.reset();
         setLoading(false);
         return;
+      } else {
+        // Si fetch responde con redirect o no-ok (FormSubmit a veces redirige) -> fallback
+        console.warn("Respuesta fetch no OK; se hará fallback al envío clásico. status=", resp.status);
+        // dejar que siga al bloque catch para fallback
+        throw new Error("Respuesta del servidor no válida: " + resp.status);
       }
-
-      // Éxito: notificar al usuario con SweetAlert2
-      await Swal.fire({
-        icon: "success",
-        title: "¡Listo!",
-        html: "<p>Gracias — en breve recibirás la descarga. Si no inicia, haz clic en el botón de descarga manual.</p>",
-        confirmButtonText: "Descargar ahora"
-      });
-
-      // Intentar descarga automática (si EBOOK_FILENAME es accesible públicamente)
-      // Si tu ebook está en otra URL pública, reemplaza la ruta aquí.
-      try {
-        triggerDownload(EBOOK_FILENAME, EBOOK_FILENAME);
-      } catch (err) {
-        console.warn("No fue posible iniciar la descarga automática:", err);
-      }
-
-      // Reset ligero del formulario (si deseas mantener valores, comenta esta línea)
-      form.reset();
-
     } catch (err) {
-      // Error en fetch (network, CORS, etc.)
-      console.error("Excepción al enviar el formulario:", err);
-      Swal.fire({
-        icon: "error",
-        title: "Error de red",
-        text: "No se pudo enviar el formulario. Revisa tu conexión o intenta más tarde."
+      // Aquí caen errores de fetch (CORS, redirect, network), haremos fallback.
+      console.warn("Fetch falló o no es fiable (CORS/redirect). Procediendo con envío por iframe. Detalle:", err);
+
+      // Mostramos indicador al usuario antes del envío clásico
+      await Swal.fire({
+        icon: "info",
+        title: "Procesando...",
+        text: "Si el correo no llega, revisa la carpeta de spam. Se realizará el envío de forma alternativa.",
+        timer: 1700,
+        showConfirmButton: false
       });
-    } finally {
-      setLoading(false);
+
+      // Envío clásico: el formulario ya tiene method="POST" y target="hidden_iframe"
+      // Para garantizar que el navegador realice el POST sin interferencias, usamos form.submit()
+      // y dejamos que el iframe reciba la respuesta (FormSubmit suele redirigir allí).
+      try {
+        form.submit(); // esto enviará al action configurado (p. ej. FormSubmit). No modifica la página principal.
+      } catch (submitErr) {
+        console.error("Error al enviar por iframe:", submitErr);
+        Swal.fire({
+          icon: "error",
+          title: "No se pudo enviar",
+          text: "Ocurrió un error al intentar enviar el formulario. Revisa la consola para más detalles."
+        });
+      } finally {
+        // Esperamos un poco y mostramos la sugerencia de descarga manual y revisar spam
+        setTimeout(() => {
+          setLoading(false);
+          Swal.fire({
+            icon: "success",
+            title: "Enviado (vía fallback)",
+            html: "Si el correo no llega en unos minutos, revisa la carpeta de SPAM o prueba con otro correo.",
+            confirmButtonText: "Entendido"
+          });
+          // Intento de descarga aunque la entrega por email demore
+          triggerDownload(EBOOK_URL);
+          form.reset();
+        }, 1500);
+      }
     }
   });
+
+  // Opcional: escucha al iframe para detectar cuando formsubmit redirige allí y mostrar confirmación.
+  // (No todas las implementaciones permiten comunicación cross-origin; aquí solo detectamos carga)
+  if (hiddenFrame) {
+    hiddenFrame.addEventListener("load", function() {
+      // Se disparará cuando la respuesta llegue al iframe; útil para confirmar envío.
+      console.log("hidden_iframe cargado: posible confirmación de envío.");
+      // No mostramos alertas intrusivas aquí porque puede ocurrir en cada load.
+    });
+  }
 })();
 </script>
-<!-- ===== FIN: SCRIPT DE CONTROL DEL FORMULARIO ===== -->
->
+<!-- ===== FIN: SCRIPT DEL FORMULARIO ===== -->
+
+
     
     <!-- Sección de CTA final (última oportunidad) -->
     <section class="py-16 bg-gradient-to-r from-primary-light to-primary animate-fadeIn delay-1300">
