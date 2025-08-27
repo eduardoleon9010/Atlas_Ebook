@@ -480,110 +480,60 @@
 		</p>
 
 		<form id="ebookForm" method="POST" 
-			  action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" 
-			  target="hidden_iframe" novalidate>
+      action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" 
+      target="hidden_iframe">
 
-		  <!-- Nombre -->
-		  <div class="mb-4">
-			<label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
-			<input id="name" name="name" type="text" required minlength="2"
-				   class="form-input w-full mt-2 p-3 border rounded-md" 
-				   placeholder="Tu nombre completo" />
-		  </div>
+	  <!-- campos visibles -->
+	  <input id="name" name="name" type="text" required placeholder="Tu nombre completo" />
+	  <input id="email" name="email" type="email" required placeholder="tu@email.com" />
 
-		  <!-- Email -->
-		  <div class="mb-4">
-			<label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-			<input id="email" name="email" type="email" required 
-				   class="form-input w-full mt-2 p-3 border rounded-md" 
-				   placeholder="tu@email.com" />
-		  </div>
+	  <!-- honeypot -->
+	  <div style="display:none;">
+		<input type="text" name="_honey">
+	  </div>
 
-		  <!-- Rol -->
-		  <div class="mb-4">
-			<label for="role" class="block text-sm font-medium text-gray-700">Rol / Organización (opcional)</label>
-			<input id="role" name="role" type="text" 
-				   class="form-input w-full mt-2 p-3 border rounded-md" 
-				   placeholder="Ej. Estudiante, Profesor, Empresa..." />
-		  </div>
-
-		  <!-- Mensaje -->
-		  <div class="mb-4">
-			<label for="message" class="block text-sm font-medium text-gray-700">Mensaje (opcional)</label>
-			<textarea id="message" name="message" rows="4" 
-					  class="form-input w-full mt-2 p-3 border rounded-md" 
-					  placeholder="Déjanos un comentario..."></textarea>
-		  </div>
-
-		  <!-- Consentimiento -->
-		  <div class="mb-6 flex items-start gap-3">
-			<input id="consent" name="consent" type="checkbox" required class="mt-1" />
-			<label for="consent" class="text-sm text-gray-700">
-			  Acepto recibir el ebook y comunicaciones relacionadas.
-			</label>
-		  </div>
-
-		  <!-- Honeypot -->
-		  <div style="display:none;">
-			<input type="text" name="_honey" tabindex="-1" autocomplete="off" />
-		  </div>
-
-		  <!-- Hidden inputs para FormSubmit -->
-		  <input type="hidden" name="_replyto" id="_replyto" />
-		  <input type="hidden" name="_cc" id="_cc" />
-		  <input type="hidden" name="_subject" value="Descarga: Atlas Interactivo" />
-		  <input type="hidden" name="_autoresponse" 
-				 value="¡Hola! 🎉 Gracias por solicitar el Atlas Interactivo de Python. 
+	  <!-- hidden inputs -->
+	  <input type="hidden" name="_replyto" id="_replyto">
+	  <input type="hidden" name="_cc" id="_cc">
+	  <input type="hidden" name="_subject" value="Descarga: Atlas Interactivo">
+	  <input type="hidden" name="_autoresponse" 
+			 value="¡Hola! 🎉 Gracias por solicitar el Atlas Interactivo de Python. 
 
 	Aquí tienes tu enlace de descarga: 
-	https://TU-USUARIO.github.io/TU-REPO/www.atlasinteractivodeprogramacionenpython.com.pdf
+	http://www.atlasinteractivodeprogramacionenpython.com.pdf/
+	https://heyzine.com/flip-book/818182e95c.html#page/1 
+	
 
 	Guarda este correo para volver a acceder cuando quieras. ¡Disfrútalo! 🚀">
-		  
-		  <!-- Botón -->
-		  <button id="submitBtn" type="submit" 
-				  class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-full font-semibold btn-primary">
-			<span id="btnText">Enviar y descargar</span>
-		  </button>
-		</form>
+
+	  <button type="submit">Enviar y descargar</button>
+	</form>
+
+	<!-- iframe oculto -->
+	<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 
 		<!-- iframe oculto -->
 		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 	  </div>
 	</section>
 
-	<script>
-	/* Configuración del PDF (usa el nombre real que está en tu repo raíz) */
+		<script>
 	const EBOOK_URL = "www.atlasinteractivodeprogramacionenpython.com.pdf"; 
 
 	const form = document.getElementById("ebookForm");
 	const replyInput = document.getElementById("_replyto");
 	const ccInput = document.getElementById("_cc");
 
-	form.addEventListener("submit", function(e) {
-	  e.preventDefault();
-
-	  if (!form.checkValidity()) {
-		form.reportValidity();
-		return;
-	  }
-
-	  // Honeypot
-	  const honey = form.querySelector('input[name="_honey"]');
-	  if (honey && honey.value) {
-		console.log("Honeypot detectado. Envío cancelado.");
-		return;
-	  }
-
-	  // Capturar email del usuario y ponerlo en hidden inputs
+	form.addEventListener("submit", function() {
+	  // Capturar email y asignar
 	  const userEmail = document.getElementById("email").value.trim();
 	  replyInput.value = userEmail;
 	  ccInput.value = userEmail;
 
-	  // Enviar formulario a FormSubmit vía iframe
-	  form.submit();
+	  // FormSubmit recibe los datos porque ya no usamos preventDefault()
 
-	  // Descargar PDF automáticamente después de 3s
+	  // Disparar la descarga después de 3s
 	  setTimeout(() => {
 		const a = document.createElement("a");
 		a.href = EBOOK_URL;
@@ -591,13 +541,8 @@
 		document.body.appendChild(a);
 		a.click();
 		a.remove();
-		console.log("Descarga iniciada: " + EBOOK_URL);
 	  }, 3000);
 	});
-	</script>
-	<!-- ===== FIN BLOQUE FORMULARIO ===== -->
-
-
 
     <!-- Sección de CTA final (última oportunidad) -->
     <section class="py-16 bg-gradient-to-r from-primary-light to-primary animate-fadeIn delay-1300">
