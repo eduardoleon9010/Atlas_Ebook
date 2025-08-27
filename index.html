@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <style>
+	
+	<style>
         body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
@@ -81,80 +82,113 @@
     <!-- Particles Background -->
     <div id="particles-js"></div>
     
-    <!-- Floating WhatsApp Button -->
-    <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook" 
-       class="fixed bottom-6 right-6 bg-[#4CAF50] text-white p-4 rounded-full shadow-lg btn-whatsapp z-50 floating-btn"
-       target="_blank">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
-    
+	<a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook"
+	   class="fixed bottom-6 right-6 w-16 h-16 bg-[#25D366] flex items-center justify-center rounded-full shadow-lg z-50 hover:scale-110 transition-transform duration-300"
+	   target="_blank" aria-label="WhatsApp">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="white">
+			<path d="M12.004 2C6.477 2 2 6.477 2 12c0 2.11.552 4.084 1.516 5.792L2 22l4.438-1.444A9.943 9.943 0 0012.004 22c5.527 0 10.004-4.477 10.004-10S17.531 2 12.004 2zm5.223 14.094c-.25.705-1.464 1.33-2.048 1.416-.54.075-1.202.11-4.045-1.226-3.262-1.55-5.36-5.06-5.54-5.327-.18-.266-1.48-1.91-1.48-3.644 0-1.734 1.035-2.592 1.404-2.942.367-.35.8-.44 1.066-.44.267 0 .528 0 .759.002.23.002.53-.09.832.66.3.75 1.02 2.595 1.11 2.782.09.186.146.41.018.66-.128.25-.19.405-.38.632-.19.227-.402.504-.572.68-.19.2-.38.424-.163.83.216.404.958 1.68 2.06 2.71 1.426 1.39 2.62 1.83 2.99 2.03.366.2.58.173.79-.104.213-.277.915-1.064 1.153-1.426.238-.36.476-.304.792-.184.316.12 2.003.946 2.35 1.118.348.172.58.257.664.4.084.142.084.824-.166 1.53z"/>
+		</svg>
+	</a>
+
     <!-- Header/Navigation -->
     <header class="container mx-auto px-4 py-6 flex justify-between items-center">
-        <div class="text-2xl font-bold gradient-text">Atlas Python</div>
-        <a href="#form" class="bg-[#FFD43B] text-black px-6 py-2 rounded-full font-medium btn-primary">Obtener Ebook</a>
+        <div class="text-2xl font-bold gradient-text"></div>
+		<a href="#form" 
+		   class="bg-[#00C4F5] text-white px-6 py-3 text-white px-8 py-4 rounded-full font-bold text-lg btn-primary inline-block">
+		   Obtener Atlas Interactivo...
+		</a>
     </header>
     
     <!-- Hero Section -->
     <section class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Descarga Gratis el <span class="gradient-text">Atlas Interactivo de Programación en Python</span>
+                Descarga gratis el <span class="gradient-text">Atlas Interactivo de Programación en Python</span>
             </h1>
             <p class="text-xl text-gray-600 mb-8">
                 Una guía práctica, interactiva y visual para aprender Python desde cero.
             </p>
-            <a href="#form" class="bg-[#FFD43B] text-black px-8 py-4 rounded-full font-bold text-lg btn-primary inline-block">
-                Obtener mi Ebook Gratis
+            <a href="#form" class="bg-[#00C4F5] text-white px-8 py-4 rounded-full font-bold text-lg btn-primary inline-block">
+                Obtener mi Atlas Interactivo gratis
             </a>
         </div>
         <div class="md:w-1/2 fade-in" style="animation-delay: 0.2s;">
             <div class="relative max-w-md mx-auto">
                 <div class="absolute -inset-4 bg-gradient-to-r from-[#00C4F5] to-[#005B96] rounded-2xl opacity-75 blur"></div>
-                <div class="relative bg-white rounded-xl overflow-hidden shadow-xl">
-                    <img src="https://via.placeholder.com/500x700/306998/FFFFFF?text=Atlas+Python" alt="Portada del Ebook" class="w-full h-auto">
-                </div>
+				<div class="relative bg-white rounded-xl overflow-hidden shadow-xl">
+					<img src="https://via.placeholder.com/500x700/306998/FFFFFF?text=Atlas+Python" alt="" class="w-full h-auto">
+				</div>
+
             </div>
         </div>
     </section>
     
-    <!-- Form Section -->
-    <section id="form" class="bg-[#005B96] py-16 fade-in" style="animation-delay: 0.4s;">
-        <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
-                <div class="p-8 md:p-10">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Descarga tu Ebook Gratis</h2>
-                    <p class="text-gray-600 mb-6">Te enviaremos el ebook directamente a tu correo.</p>
+<!-- Form Section -->
+<section id="form" class="bg-[#005B96] py-16 fade-in" style="animation-delay: 0.4s;">
+    <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+            <div class="p-8 md:p-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Descarga tu Atlas Interactivo gratis</h2>
+                <p class="text-gray-600 mb-6">Impulsa tus habilidades en Python con nuestro Atlas Interactivo, ¡listo para ti en un clic!</p>
+                
+                <form action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST" class="space-y-4">
+                    <!-- Configuración oculta -->
+                    <input type="hidden" name="_subject" value="¡Nuevo registro en la Landing del Atlas Python!">
+                    <input type="hidden" name="_autoresponse" value="¡Gracias por registrarte! Aquí tienes tu Atlas Interactivo de Programación en Python: https://heyzine.com/flip-book/818182e95c.html#page/1">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none"> <!-- Anti-spam -->
                     
-                    <form action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST" class="space-y-4">
-                        <input type="hidden" name="_subject" value="Tu ebook gratis: Atlas Interactivo de Programación en Python">
-                        <input type="hidden" name="_autoresponse" value="¡Gracias por descargar nuestro ebook! Puedes acceder al Atlas Interactivo de Programación en Python aquí: https://heyzine.com/flip-book/818182e95c.html#page/1">
-                        <input type="hidden" name="_template" value="table">
-                        
-                        <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Nombre Completo</label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-[#00C4F5] text-white px-6 py-4 rounded-lg font-bold text-lg btn-primary">
-                            Descargar Gratis
-                        </button>
-                        
-                        <p class="text-sm text-gray-500 mt-4">
-                            Tu información está segura. Nunca compartiremos tus datos.
-                        </p>
-                    </form>
-                </div>
+                    <!-- Campos visibles -->
+                    <div>
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
+                        <input type="text" id="name" name="Nombre completo" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+                        <input type="email" id="email" name="Correo electrónico" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono / WhatsApp</label>
+                        <input type="tel" id="phone" name="Teléfono" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
+                    </div>
+                    
+                    <div>
+                        <label for="country" class="block text-gray-700 font-medium mb-2">País / Ciudad</label>
+                        <input type="text" id="country" name="País / Ciudad" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
+                    </div>
+                    
+                    <div>
+                        <label for="role" class="block text-gray-700 font-medium mb-2">Ocupación</label>
+                        <select id="role" name="Ocupación" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
+                            <option value="">Selecciona una opción</option>
+                            <option value="Estudiante">Estudiante</option>
+                            <option value="Docente">Docente</option>
+                            <option value="Profesional">Profesional</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Botón -->
+                    <button type="submit" class="w-full bg-[#00C4F5] text-white px-6 py-4  rounded-full font-bold text-lg btn-primary inline-block">
+                        Descargar gratis
+                    </button>
+                    
+                    <p class="text-sm text-gray-500 mt-4">
+                        Tu información está segura. Nunca compartiremos tus datos.
+                    </p>
+                </form>
             </div>
         </div>
-    </section>
-    
+    </div>
+</section>
+
     <!-- Benefits Section -->
     <section class="py-16 bg-white fade-in" style="animation-delay: 0.6s;">
         <div class="container mx-auto px-4">
@@ -165,7 +199,7 @@
                     <div class="text-4xl mb-4 feature-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-800">Aprende Python desde cero</h3>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Aprende Python desde cero.</h3>
                     <p class="text-gray-600">Con ejemplos claros y prácticos para cada concepto.</p>
                 </div>
                 
@@ -173,7 +207,7 @@
                     <div class="text-4xl mb-4 feature-icon">
                         <i class="fas fa-book-open"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-800">Ebook interactivo</h3>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Atlas interactivo.</h3>
                     <p class="text-gray-600">Contenido visual y dinámico para una mejor comprensión.</p>
                 </div>
                 
@@ -196,28 +230,38 @@
         </div>
     </section>
     
-    <!-- Social Proof Section -->
-    <section class="py-16 bg-gray-50 fade-in" style="animation-delay: 0.8s;">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-3xl mx-auto">
-                <div class="text-5xl mb-4 text-[#00C4F5]">
-                    <i class="fas fa-quote-left"></i>
+<!-- Social Proof Section -->
+<section class="py-16 bg-gray-50 fade-in" style="animation-delay: 0.8s;">
+    <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-5xl mb-4 text-[#00C4F5]">
+                <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="text-2xl font-medium text-gray-700 mb-8">
+                "Más de 5,00 estudiantes ya han aprendido Python con esta Atlas interactivo que hace que la programación sea accesible para todos."
+            </p>
+            <div class="flex justify-center space-x-4">
+                <div class="w-12 h-12 rounded-full bg-[#00C4F5] flex items-center justify-center text-white">
+                    <i class="fas fa-user"></i>
                 </div>
-                <p class="text-2xl font-medium text-gray-700 mb-8">
-                    "Más de 5,000 estudiantes ya han aprendido Python con esta guía interactiva que hace que la programación sea accesible para todos."
-                </p>
-                <div class="flex justify-center space-x-4">
-                    <div class="w-12 h-12 rounded-full bg-[#00C4F5] flex items-center justify-center text-white">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-800">Equipo Atlas Python</h4>
-                        <p class="text-gray-600">Instructores Certificados</p>
-                    </div>
+                <div>
+                    <a href="https://www.atlasinteractivodeprogramacionenpython.com/" target="_blank" title="Visitar Atlas Interactivo de Programación en Python">
+                        <h4 class="font-bold text-gray-800 hover:text-[#00C4F5] transition-colors">
+                            Conoce al equipo revisor del Atlas (ebook)
+                        </h4>
+                    </a>
+					
+					<a class="text-gray-600">Creado por
+						<a href="https://www.linkedin.com/in/phdleon/" target="_blank" class="text-[#00C4F5] hover:underline">Eduardo León (PhD c.)
+						</a>con revisión de expertos
+					</a>
+					
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     
     <!-- Final CTA Section -->
     <section class="py-16 bg-gradient-to-r from-[#00C4F5] to-[#005B96] fade-in" style="animation-delay: 1s;">
@@ -225,8 +269,8 @@
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
                 Obtén tu Ebook Gratis y comienza a programar en Python hoy mismo
             </h2>
-            <a href="#form" class="inline-block bg-[#FFD43B] text-black px-8 py-4 rounded-full font-bold text-lg btn-primary">
-                Descargar Gratis Ahora
+            <a href="#form" class="inline-block bg-[#FFFFFF] text-black px-8 py-4 rounded-full font-bold text-lg btn-primary inline-block">
+                Descargar gratis ahora
             </a>
         </div>
     </section>
@@ -236,7 +280,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
-                    <div class="text-2xl font-bold gradient-text">Atlas Python</div>
+                    <div class="text-2xl font-bold gradient-text">Atlas Interactivo de Programacion con Python</div>
                     <p class="text-gray-400 mt-2">© 2023 Todos los derechos reservados</p>
                 </div>
                 <div class="flex space-x-6">
