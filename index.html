@@ -419,30 +419,26 @@
                         <p class="text-gray-600 mb-6">Y recibe instantáneamente el enlace de descarga en tu correo.</p>
 
 						<form action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST">
-						  <!-- Campos visibles -->
-						  <input type="text" name="Nombre" placeholder="Tu nombre" required>
-						  <input type="email" name="Email" placeholder="Tu correo" required>
+					  <!-- Datos del usuario -->
+					  <input type="text" name="Nombre" placeholder="Tu nombre" required>
+					  <input type="email" name="Email" placeholder="Tu correo" required>
 
-						  <!-- Asunto del correo -->
-						  <input type="hidden" name="_subject" value="📘 Tu ebook gratis: Atlas Interactivo de Programación en Python">
+					  <!-- Asunto para el dueño -->
+					  <input type="hidden" name="_subject" value="📘 Nuevo registro - Atlas Interactivo de Programación en Python">
 
-						  <!-- Mensaje de auto-respuesta -->
-						  <input type="hidden" name="_autoresponse" value="¡Hola! 👋 Gracias por registrarte. 
-						Aquí tienes tu ebook gratuito: https://heyzine.com/flip-book/818182e95c.html#page/1 
-						¡Esperamos que lo disfrutes! 🚀">
+					  <!-- Plantilla del correo -->
+					  <input type="hidden" name="_template" value="table">
 
-						  <!-- Plantilla -->
-						  <input type="hidden" name="_template" value="table">
+					  <!-- Anti-spam -->
+					  <input type="text" name="_honey" style="display:none">
+					  <input type="hidden" name="_captcha" value="false">
 
-						  <!-- Anti-spam -->
-						  <input type="text" name="_honey" style="display:none">
-						  <input type="hidden" name="_captcha" value="false">
+					  <!-- Redirección al Atlas tras enviar el formulario -->
+					  <input type="hidden" name="_next" value="https://heyzine.com/flip-book/818182e95c.html#page/1">
 
-						  <!-- Redirección a página de gracias -->
-						  <input type="hidden" name="_next" value="https://tu-dominio.com/gracias.html">
+					  <button type="submit">📥 Descargar Gratis</button>
+					</form>
 
-						  <button type="submit">📥 Descargar Gratis</button>
-						</form>
 
 
 
