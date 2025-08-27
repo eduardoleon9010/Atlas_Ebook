@@ -418,26 +418,36 @@
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Completa el formulario</h3>
                         <p class="text-gray-600 mb-6">Y recibe instantáneamente el enlace de descarga en tu correo.</p>
 
-						<form action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST">
-					  <!-- Datos del usuario -->
-					  <input type="text" name="Nombre" placeholder="Tu nombre" required>
-					  <input type="email" name="Email" placeholder="Tu correo" required>
+						<form id="atlasForm" action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST">
+						  <!-- Datos del usuario -->
+						  <input type="text" name="Nombre" placeholder="Tu nombre" required>
+						  <input type="email" name="Email" placeholder="Tu correo" required>
 
-					  <!-- Asunto para el dueño -->
-					  <input type="hidden" name="_subject" value="📘 Nuevo registro - Atlas Interactivo de Programación en Python">
+						  <!-- Asunto para el dueño -->
+						  <input type="hidden" name="_subject" value="📘 Nuevo registro - Atlas Interactivo de Programación en Python">
 
-					  <!-- Plantilla del correo -->
-					  <input type="hidden" name="_template" value="table">
+						  <!-- Plantilla del correo -->
+						  <input type="hidden" name="_template" value="table">
 
-					  <!-- Anti-spam -->
-					  <input type="text" name="_honey" style="display:none">
-					  <input type="hidden" name="_captcha" value="false">
+						  <!-- Anti-spam -->
+						  <input type="text" name="_honey" style="display:none">
+						  <input type="hidden" name="_captcha" value="false">
 
-					  <!-- Redirección al Atlas tras enviar el formulario -->
-					  <input type="hidden" name="_next" value="https://heyzine.com/flip-book/818182e95c.html#page/1">
+						  <!-- Redirección interna de respaldo -->
+						  <input type="hidden" name="_next" value="https://heyzine.com/flip-book/818182e95c.html#page/1">
 
-					  <button type="submit">📥 Descargar Gratis</button>
-					</form>
+						  <button type="submit">📥 Descargar Gratis</button>
+						</form>
+
+						<script>
+						  document.getElementById("atlasForm").addEventListener("submit", function() {
+							// Espera medio segundo para no interrumpir el envío
+							setTimeout(function() {
+							  window.open("https://heyzine.com/flip-book/818182e95c.html#page/1", "_blank");
+							}, 500);
+						  });
+						</script>
+
 
 
 
