@@ -470,80 +470,130 @@
         </div>
     </section>
 
+   <!-- ===== FORMULARIO OPTIMIZADO ===== -->
+    <section id="form" class="py-16 bg-gray-50 animate-fadeIn">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-primary-light to-primary p-6 text-center">
+                    <h2 class="text-3xl font-bold text-white mb-2">¡Obtén tu Atlas Interactivo GRATIS!</h2>
+                    <p class="text-white opacity-90">Completa el formulario y recibe instantáneamente tu ebook</p>
+                </div>
+                
+                <div class="p-6 md:p-8">
+                    <form id="ebookForm" class="space-y-6" 
+                          action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" 
+                          method="POST" 
+                          target="hidden_iframe">
+                        
+                        <!-- Nombre -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo *</label>
+                            <input type="text" id="name" name="name" required minlength="2" 
+                                   class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-light focus:ring-2 focus:ring-primary-light/20 transition-all duration-200 form-input"
+                                   placeholder="¿Cómo te llamas?">
+                            <div class="text-xs text-gray-500 mt-1">Necesitamos tu nombre para personalizar tu experiencia</div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-light focus:ring-2 focus:ring-primary-light/20 transition-all duration-200 form-input"
+                                   placeholder="tu@email.com">
+                            <div class="text-xs text-gray-500 mt-1">Te enviaremos el ebook a esta dirección</div>
+                        </div>
+                        
+                        <!-- Rol/Ocupación -->
+                        <div>
+                            <label for="role" class="block text-sm font-medium text-gray-700 mb-2">¿Qué describes mejor tu situación?</label>
+                            <select id="role" name="role" 
+                                    class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-light focus:ring-2 focus:ring-primary-light/20 transition-all duration-200 form-input">
+                                <option value="">Selecciona una opción</option>
+                                <option value="estudiante">Estudiante</option>
+                                <option value="profesor">Profesor/Educador</option>
+                                <option value="profesional">Profesional en transición</option>
+                                <option value="empresario">Empresario/Emprendedor</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Intereses (checkboxes) -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">¿Qué te interesa aprender? (opcional)</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="fundamentos" class="checkbox mr-3">
+                                    <span class="text-gray-700">Fundamentos de Python</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="web" class="checkbox mr-3">
+                                    <span class="text-gray-700">Desarrollo Web</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="data" class="checkbox mr-3">
+                                    <span class="text-gray-700">Ciencia de Datos</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="automation" class="checkbox mr-3">
+                                    <span class="text-gray-700">Automatización</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Consentimiento -->
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                            <label class="flex items-start">
+                                <input type="checkbox" id="consent" name="consent" required class="checkbox mt-1 mr-3">
+                                <span class="text-sm text-gray-700">
+                                    Sí, acepto recibir el Atlas Interactivo de Python y futuras comunicaciones sobre programación. 
+                                    Puedo darme de baja en cualquier momento.
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <!-- Campos ocultos para FormSubmit -->
+                        <input type="hidden" name="_subject" value="Nueva descarga del Atlas Interactivo de Python">
+                        <input type="hidden" name="_autoresponse" value="¡Gracias por descargar nuestro Atlas Interactivo de Python! Aquí está tu enlace de descarga: [https://heyzine.com/flip-book/818182e95c.html#page/1 ]. ¡Disfruta aprendiendo!">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://heyzine.com/flip-book/818182e95c.html#page/1 ">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <!-- Honeypot -->
+                        <div style="display: none;">
+                            <input type="text" name="_honey" style="display: none;">
+                        </div>
+                        
+                        <!-- Botón de envío -->
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-primary-light to-primary hover:from-primary hover:to-primary-dark text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center justify-center wave-effect">
+                            <span id="btnText">🎓 Obtener mi Atlas Gratis</span>
+                            <svg id="btnSpinner" class="hidden animate-spin ml-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </button>
+                        
+                        <p class="text-xs text-gray-500 text-center">
+                            🔒 Respetamos tu privacidad. Nunca compartiremos tu información.
+                        </p>
+                    </form>
+                    
+                    <!-- Enlace de descarga manual -->
+                    <div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-200 text-center">
+                        <p class="text-sm text-green-800 mb-2">¿Problemas con el formulario?</p>
+                        <a href="atlas-python.pdf" download 
+                           class="text-green-700 hover:text-green-900 underline text-sm font-medium">
+                            Descargar manualmente el Atlas Interactivo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Iframe oculto para el envío del formulario -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"></iframe>
+    </section>
 
-	<!-- ===== INICIO BLOQUE FORMULARIO ===== -->
-	<section id="form" class="container mx-auto px-4 py-12">
-	  <div class="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-md">
-		<h2 class="text-2xl font-bold mb-4">Obtén tu Atlas Interactivo</h2>
-		<p class="text-gray-600 mb-6">
-		  Completa el formulario y recibirás tu ebook. La descarga se iniciará automáticamente y también recibirás un correo con el enlace.
-		</p>
-
-		<form id="ebookForm" method="POST" 
-      action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" 
-      target="hidden_iframe">
-
-	  <!-- campos visibles -->
-	  <input id="name" name="name" type="text" required placeholder="Tu nombre completo" />
-	  <input id="email" name="email" type="email" required placeholder="tu@email.com" />
-
-	  <!-- honeypot -->
-	  <div style="display:none;">
-		<input type="text" name="_honey">
-	  </div>
-
-	  <!-- hidden inputs -->
-	  <input type="hidden" name="_replyto" id="_replyto">
-	  <input type="hidden" name="_cc" id="_cc">
-	  <input type="hidden" name="_subject" value="Descarga: Atlas Interactivo">
-	  <input type="hidden" name="_autoresponse" 
-			 value="¡Hola! 🎉 Gracias por solicitar el Atlas Interactivo de Python. 
-
-	Aquí tienes tu enlace de descarga: 
-	http://www.atlasinteractivodeprogramacionenpython.com.pdf/
-	https://heyzine.com/flip-book/818182e95c.html#page/1 
-	
-
-	Guarda este correo para volver a acceder cuando quieras. ¡Disfrútalo! 🚀">
-
-	  <button type="submit">Enviar y descargar</button>
-	</form>
-
-	<!-- iframe oculto -->
-	<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-
-		<!-- iframe oculto -->
-		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-	  </div>
-	</section>
-
-		<script>
-	const EBOOK_URL = "www.atlasinteractivodeprogramacionenpython.com.pdf"; 
-
-	const form = document.getElementById("ebookForm");
-	const replyInput = document.getElementById("_replyto");
-	const ccInput = document.getElementById("_cc");
-
-	form.addEventListener("submit", function() {
-	  // Capturar email del usuario
-	  const userEmail = document.getElementById("email").value.trim();
-	  replyInput.value = userEmail;
-	  ccInput.value = userEmail;
-
-	  // ✅ El formulario ahora sí se envía a FormSubmit (no lo bloqueamos)
-
-	  // Descargar PDF automáticamente después de 3s
-	  setTimeout(() => {
-		const a = document.createElement("a");
-		a.href = EBOOK_URL;
-		a.download = "";
-		document.body.appendChild(a);
-		a.click();
-		a.remove();
-		console.log("Descarga iniciada: " + EBOOK_URL);
-	  }, 3000);
-	});
 
 
     <!-- Sección de CTA final (última oportunidad) -->
