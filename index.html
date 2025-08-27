@@ -432,94 +432,237 @@
         </div>
     </section>
     
-    <!-- Sección del formulario (CTA principal) -->
-    <section id="form" class="bg-primary py-16 animate-fadeIn delay-1100">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 bg-gradient-to-b from-primary-light to-primary p-6 md:p-8 text-white flex flex-col justify-center">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4">Descarga tu Atlas Interactivo <span class="text-yellow-300">GRATIS</span></h2>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2 text-yellow-300"></i>
-                                <span>Guía completa de Python desde cero</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2 text-yellow-300"></i>
-                                <span>120 páginas de contenido interactivo</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2 text-yellow-300"></i>
-                                <span>85 ejercicios prácticos con soluciones</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2 text-yellow-300"></i>
-                                <span>12 proyectos reales para tu portafolio</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle mt-1 mr-2 text-yellow-300"></i>
-                                <span>Acceso a comunidad de estudiantes</span>
-                            </li>
-                        </ul>
-                        <div class="flex items-center mt-4">
-                            <i class="fas fa-lock text-xl mr-2 text-yellow-300"></i>
-                            <span class="text-sm opacity-90">Protegemos tus datos. No compartiremos tu información.</span>
-                        </div>
-                    </div>
-                    
-                    <div class="md:w-1/2 p-8">
-					  <form id="ebookForm" action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST" class="space-y-6">
-						  
-						  <!-- Campos ocultos de configuración -->
-						  <input type="hidden" name="_subject" value="Nuevo registro - Atlas Interactivo de Python">
-						  <input type="hidden" name="_captcha" value="false">
-						  <!-- Redirección después de enviar -->
-						  <input type="hidden" name="_next" value="https://heyzine.com/flip-book/818182e95c.html#page/1">
-						  <!-- Respuesta automática al usuario -->
-						  <input type="hidden" name="_autoresponse" 
-								 value="¡Gracias por registrarte en el Atlas Interactivo de Programación en Python!
+<!-- ===== INICIO: BLOQUE DEL FORMULARIO (Reemplazar solo la sección del formulario) ===== -->
+<section id="form" class="container mx-auto px-4 py-12">
+  <div class="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-md">
+    <h2 class="text-2xl font-bold mb-4">Obtén tu Atlas Interactivo</h2>
+    <p class="text-gray-600 mb-6">Completa este formulario para recibir el enlace de descarga del ebook.</p>
 
-					👉 Accede al flipbook: https://heyzine.com/flip-book/818182e95c.html#page/1
-					👉 Descarga el PDF: https://www.atlasinteractivodeprogramacionenpython.com.pdf">
+    <!-- Formulario principal -->
+    <form id="ebookForm" novalidate>
+      <!-- Campo nombre -->
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          minlength="2"
+          class="form-input w-full mt-2 p-3 border rounded-md form-input"
+          placeholder="Tu nombre completo"
+          aria-describedby="nameHelp"
+        />
+        <p id="nameHelp" class="text-xs text-gray-500 mt-1">Escribe tu nombre tal como quieres que aparezca en la descarga.</p>
+      </div>
 
-						  <!-- Nombre -->
-						  <div>
-							  <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
-							  <input type="text" id="name" name="name" required 
-									 class="w-full px-4 py-3 border rounded-lg form-input focus:ring-2 focus:ring-[#00C4F5]">
-						  </div>
+      <!-- Campo correo -->
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="form-input w-full mt-2 p-3 border rounded-md"
+          placeholder="tu@correo.com"
+        />
+      </div>
 
-						  <!-- Correo -->
-						  <div>
-							  <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
-							  <input type="email" id="email" name="email" required 
-									 class="w-full px-4 py-3 border rounded-lg form-input focus:ring-2 focus:ring-[#00C4F5]">
-						  </div>
+      <!-- Campo organización/rol opcional -->
+      <div class="mb-4">
+        <label for="role" class="block text-sm font-medium text-gray-700">Organización / Rol (opcional)</label>
+        <input
+          id="role"
+          name="role"
+          type="text"
+          class="form-input w-full mt-2 p-3 border rounded-md"
+          placeholder="Ej. Profesor, Estudiante, Desarrollador..."
+        />
+      </div>
 
-						  <!-- Botón de envío -->
-						  <button id="submitBtn" type="submit"
-								  class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-lg font-bold flex items-center justify-center">
-							  <span id="btnText">Descargar gratis ahora</span>
-							  <svg id="btnSpinner" class="hidden animate-spin h-5 w-5 ml-2 text-white"
-								   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-								  <circle class="opacity-25" cx="12" cy="12" r="10" 
-										  stroke="currentColor" stroke-width="4"></circle>
-								  <path class="opacity-75" fill="currentColor" 
-										d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-							  </svg>
-						  </button>
+      <!-- Mensaje opcional -->
+      <div class="mb-4">
+        <label for="message" class="block text-sm font-medium text-gray-700">Mensaje (opcional)</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          class="form-input w-full mt-2 p-3 border rounded-md"
+          placeholder="Si quieres, deja un comentario o pregunta..."
+        ></textarea>
+      </div>
 
-						  <!-- Texto de confianza -->
-						  <p class="text-sm text-gray-500 mt-4 text-center">
-							  Tu información está segura. Nunca compartiremos tus datos.
-						  </p>
-					  </form>
-					</div>
+      <!-- Consentimiento -->
+      <div class="mb-6 flex items-start gap-3">
+        <input id="consent" name="consent" type="checkbox" required class="mt-1" />
+        <label for="consent" class="text-sm text-gray-700">
+          Acepto recibir el ebook y comunicaciones relacionadas. Puedes cancelar en cualquier momento.
+        </label>
+      </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
+      <!-- Campos ocultos para servicio de formularios (puedes cambiar si usas otro) -->
+      <!-- _captcha=false evita la verificación por FormSubmit; quítalo si prefieres captcha -->
+      <input type="hidden" name="_subject" value="Descarga: Atlas Interactivo" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      <!-- Botón enviar -->
+      <div class="flex items-center gap-4">
+        <button
+          id="submitBtn"
+          type="submit"
+          class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-full font-semibold btn-primary"
+          aria-live="polite"
+        >
+          <!-- Texto y spinner manipulados por JS -->
+          <span id="btnText">Enviar y descargar</span>
+          <svg id="btnSpinner" class="hidden animate-spin inline-block w-5 h-5 ml-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 01-8 8z"></path>
+          </svg>
+        </button>
+
+        <div id="statusText" class="text-sm text-gray-600 hidden">Procesando...</div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FIN: BLOQUE DEL FORMULARIO ===== -->
+
+<!-- ===== INICIO: SCRIPT DE CONTROL DEL FORMULARIO (documentado en español) ===== -->
+<script>
+/*
+  Script para manejo del formulario "ebookForm".
+  - Valida campos HTML5.
+  - Envía usando fetch (FormData) a FORM_ACTION.
+  - Muestra alertas con SweetAlert2 (ya incluida en tu página).
+  - Descarga automáticamente el PDF al completar correctamente.
+  - Comentarios internos en español para que entiendas cada bloque.
+*/
+
+(function () {
+  // Cambia este valor por el endpoint real que uses (FormSubmit o tu API).
+  // Ejemplo para FormSubmit: "https://formsubmit.co/TU_EMAIL@ejemplo.com"
+  const FORM_ACTION = "https://formsubmit.co/TU_EMAIL@ejemplo.com";
+
+  // Nombre del archivo que quieres que se descargue tras el submit.
+  // Si tu PDF está en otra ruta (Drive, S3, etc.) coloca la URL absoluta.
+  const EBOOK_FILENAME = "atlas-python.pdf";
+
+  // Referencias a elementos del DOM
+  const form = document.getElementById("ebookForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const btnText = document.getElementById("btnText");
+  const btnSpinner = document.getElementById("btnSpinner");
+  const statusText = document.getElementById("statusText");
+
+  // Utilidad: activar/desactivar estado de carga
+  function setLoading(isLoading) {
+    if (isLoading) {
+      submitBtn.disabled = true;
+      btnText.textContent = "Enviando...";
+      btnSpinner.classList.remove("hidden");
+      statusText.classList.remove("hidden");
+    } else {
+      submitBtn.disabled = false;
+      btnText.textContent = "Enviar y descargar";
+      btnSpinner.classList.add("hidden");
+      statusText.classList.add("hidden");
+    }
+  }
+
+  // Utilidad: función para descargar archivo (si es una ruta pública)
+  function triggerDownload(url, filename) {
+    // crear enlace temporal
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename || "";
+    document.body.appendChild(a);
+    a.click();
+    // limpiar
+    setTimeout(() => {
+      document.body.removeChild(a);
+    }, 500);
+  }
+
+  // Manejo del evento submit
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Validación HTML5 nativa
+    if (!form.checkValidity()) {
+      // Si no es válido, mostrar mensajes nativos y marcar campos
+      // Forzamos 'reportValidity' para mostrar mensaje al usuario
+      form.reportValidity();
+      return;
+    }
+
+    // Construir FormData para envío
+    const data = new FormData(form);
+
+    // Opcional: puedes añadir campos extra antes de enviar
+    data.append("_timestamp", new Date().toISOString());
+
+    try {
+      setLoading(true);
+
+      // Enviar con fetch al endpoint definido (POST)
+      const response = await fetch(FORM_ACTION, {
+        method: "POST",
+        body: data,
+        // Si tu endpoint requiere encabezados específicos, agrégalos aquí.
+      });
+
+      // Si usas FormSubmit, una redirect 200-302 es esperable.
+      if (!response.ok) {
+        // Manejo básico de error: mostrar alerta y volver al estado inicial.
+        const text = await response.text().catch(() => "");
+        Swal.fire({
+          icon: "error",
+          title: "Error al enviar",
+          html: `<p>No se pudo procesar la solicitud. Por favor intenta más tarde.</p><pre style="white-space:pre-wrap;">${response.status} ${response.statusText}</pre>`,
+        });
+        console.error("Error envío formulario:", response.status, response.statusText, text);
+        setLoading(false);
+        return;
+      }
+
+      // Éxito: notificar al usuario con SweetAlert2
+      await Swal.fire({
+        icon: "success",
+        title: "¡Listo!",
+        html: "<p>Gracias — en breve recibirás la descarga. Si no inicia, haz clic en el botón de descarga manual.</p>",
+        confirmButtonText: "Descargar ahora"
+      });
+
+      // Intentar descarga automática (si EBOOK_FILENAME es accesible públicamente)
+      // Si tu ebook está en otra URL pública, reemplaza la ruta aquí.
+      try {
+        triggerDownload(EBOOK_FILENAME, EBOOK_FILENAME);
+      } catch (err) {
+        console.warn("No fue posible iniciar la descarga automática:", err);
+      }
+
+      // Reset ligero del formulario (si deseas mantener valores, comenta esta línea)
+      form.reset();
+
+    } catch (err) {
+      // Error en fetch (network, CORS, etc.)
+      console.error("Excepción al enviar el formulario:", err);
+      Swal.fire({
+        icon: "error",
+        title: "Error de red",
+        text: "No se pudo enviar el formulario. Revisa tu conexión o intenta más tarde."
+      });
+    } finally {
+      setLoading(false);
+    }
+  });
+})();
+</script>
+<!-- ===== FIN: SCRIPT DE CONTROL DEL FORMULARIO ===== -->
+>
     
     <!-- Sección de CTA final (última oportunidad) -->
     <section class="py-16 bg-gradient-to-r from-primary-light to-primary animate-fadeIn delay-1300">
