@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas Interactivo de Programación en Python - Descarga Gratis</title>
+    <!-- CDN de Tailwind CSS para estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Poppins de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Librería particles.js para efectos de fondo -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- SweetAlert2 para alertas/modales -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <style>
@@ -123,20 +128,20 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Progress Bar -->
+    <!-- Barra de progreso de desplazamiento -->
     <div class="progress-bar" id="progressBar"></div>
     
-    <!-- Particles Background -->
+    <!-- Contenedor para el fondo animado con particles.js -->
     <div id="particles-js"></div>
     
-    <!-- WhatsApp Floating Button -->
+    <!-- Botón flotante de WhatsApp (posición fija abajo a la derecha) -->
     <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook"
        class="fixed bottom-6 right-6 w-16 h-16 bg-[#25D366] flex items-center justify-center rounded-full shadow-lg z-50 hover:scale-110 transition-transform duration-300 floating-btn"
        target="_blank" aria-label="WhatsApp">
         <i class="fab fa-whatsapp text-white text-2xl"></i>
     </a>
 
-    <!-- Header/Navigation -->
+    <!-- Encabezado / Barra de navegación (se mantiene fijo al hacer scroll) -->
     <header class="container mx-auto px-4 py-6 flex justify-between items-center sticky top-0 bg-white bg-opacity-90 backdrop-blur-sm z-40 shadow-sm">
         <div class="text-2xl font-bold gradient-text">Atlas Python</div>
         <a href="#form" 
@@ -145,7 +150,7 @@
         </a>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Sección Hero (contenido principal con título, descripción y portada del libro) -->
     <section class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -198,7 +203,7 @@
         </div>
     </section>
 
-    <!-- Counter Section -->
+    <!-- Sección de contadores animados (estudiantes, páginas, etc.) -->
     <section class="bg-gray-100 py-12 fade-in" style="animation-delay: 0.3s;">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -222,7 +227,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Sección de características/beneficios del producto -->
     <section id="features" class="py-16 bg-white fade-in" style="animation-delay: 0.5s;">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -282,7 +287,7 @@
         </div>
     </section>
 
-    <!-- Video Preview Section -->
+    <!-- Sección de video demostrativo (con botón de reproducción) -->
     <section class="py-16 bg-gray-50 fade-in" style="animation-delay: 0.7s;">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center mb-12">
@@ -305,7 +310,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Sección de testimonios de estudiantes/clientes -->
     <section class="py-16 bg-white fade-in" style="animation-delay: 0.9s;">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Lo que dicen nuestros estudiantes</h2>
@@ -374,7 +379,7 @@
         </div>
     </section>
 
-    <!-- Form Section -->
+    <!-- Sección del formulario de registro (con campos requeridos) -->
     <section id="form" class="bg-[#005B96] py-16 fade-in" style="animation-delay: 1.1s;">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
@@ -413,67 +418,75 @@
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Completa el formulario</h3>
                         <p class="text-gray-600 mb-6">Y recibe instantáneamente el enlace de descarga en tu correo.</p>
                         
-						<form action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST" class="space-y-4">
-							<!-- Configuración oculta -->
-							<input type="hidden" name="_subject" value="¡Nuevo registro en la Landing del Atlas Python!">
-							<input type="hidden" name="_autoresponse" value="¡Gracias por registrarte! Aquí tienes tu Atlas Interactivo de Programación en Python: https://heyzine.com/flip-book/818182e95c.html#page/1">
-							<input type="hidden" name="_template" value="table">
-							<input type="hidden" name="_captcha" value="false">
-							<input type="text" name="_honey" style="display:none"> <!-- Anti-spam -->
-							
-							<!-- Campos visibles -->
-							<div>
-								<label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
-								<input type="text" id="name" name="Nombre completo" required 
-									   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-							</div>
-							
-							<div>
-								<label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
-								<input type="email" id="email" name="email" required 
-									   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-							</div>
-							
-							<div>
-								<label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono / WhatsApp</label>
-								<input type="tel" id="phone" name="Teléfono" 
-									   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-							</div>
-							
-							<div>
-								<label for="country" class="block text-gray-700 font-medium mb-2">País / Ciudad</label>
-								<input type="text" id="country" name="País / Ciudad" 
-									   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-							</div>
-							
-							<div>
-								<label for="role" class="block text-gray-700 font-medium mb-2">Ocupación</label>
-								<select id="role" name="Ocupación" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-									<option value="">Selecciona una opción</option>
-									<option value="Estudiante">Estudiante</option>
-									<option value="Docente">Docente</option>
-									<option value="Profesional">Profesional</option>
-									<option value="Otro">Otro</option>
-								</select>
-							</div>
-							
-							<!-- Botón -->
-							<button type="submit" class="w-full bg-[#00C4F5] text-white px-6 py-4  rounded-full font-bold text-lg btn-primary inline-block">
-								Descargar gratis
-							</button>
-							
-							<p class="text-sm text-gray-500 mt-4">
-								Tu información está segura. Nunca compartiremos tus datos.
-							</p>
-						</form>
-
+                        <form id="ebookForm" action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" method="POST" class="space-y-4">
+                            <!-- Configuración oculta -->
+                            <input type="hidden" name="_subject" value="¡Nuevo registro en la Landing del Atlas Python!">
+                            <input type="hidden" name="_autoresponse" value="¡Gracias por registrarte! Aquí tienes tu Atlas Interactivo de Programación en Python: https://heyzine.com/flip-book/818182e95c.html#page/1">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://tu-dominio.com/gracias.html">
+                            <input type="text" name="_honey" style="display:none">
+                            
+                            <!-- Campos visibles -->
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo*</label>
+                                <input type="text" id="name" name="Nombre completo" required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico*</label>
+                                <input type="email" id="email" name="email" required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono / WhatsApp</label>
+                                <input type="tel" id="phone" name="Teléfono"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+                            </div>
+                            
+                            <div>
+                                <label for="country" class="block text-gray-700 font-medium mb-2">País / Ciudad</label>
+                                <input type="text" id="country" name="País / Ciudad"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+                            </div>
+                            
+                            <div>
+                                <label for="role" class="block text-gray-700 font-medium mb-2">Ocupación</label>
+                                <select id="role" name="Ocupación" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5] form-input">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Estudiante">Estudiante</option>
+                                    <option value="Docente">Docente</option>
+                                    <option value="Profesional">Profesional</option>
+                                    <option value="Emprendedor">Emprendedor</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="pt-2">
+                                <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-4 rounded-full font-bold text-lg btn-primary hover:from-[#005B96] hover:to-[#00C4F5] transition-all duration-300">
+                                    <span id="btnText">Descargar gratis ahora</span>
+                                    <div id="btnSpinner" class="hidden inline-block">
+                                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                            
+                            <p class="text-sm text-gray-500 mt-4">
+                                <i class="fas fa-lock mr-1"></i> Tu información está segura. Nunca compartiremos tus datos.
+                            </p>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Section -->
+    <!-- Sección final de llamado a la acción (Call To Action) -->
     <section class="py-16 bg-gradient-to-r from-[#00C4F5] to-[#005B96] fade-in" style="animation-delay: 1.3s;">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -488,7 +501,7 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- Sección de Preguntas Frecuentes (acordeón interactivo) -->
     <section class="py-16 bg-white fade-in" style="animation-delay: 1.5s;">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Preguntas frecuentes</h2>
@@ -537,7 +550,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Pie de página con enlaces, contacto y redes sociales -->
     <footer class="bg-gray-900 text-white py-12 fade-in" style="animation-delay: 1.7s;">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
@@ -601,7 +614,7 @@
     </footer>
 
     <script>
-        // Initialize particles.js
+        // Inicialización de particles.js para el fondo animado
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
                 "particles": {
@@ -709,7 +722,7 @@
                 "retina_detect": true
             });
 
-            // Smooth scroll for anchor links
+            // Scroll suave para enlaces internos (anclas)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -720,7 +733,7 @@
                 });
             });
 
-            // Progress bar
+            // Barra de progreso que muestra el avance del scroll
             window.addEventListener('scroll', function() {
                 const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
                 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -728,7 +741,7 @@
                 document.getElementById('progressBar').style.width = scrolled + '%';
             });
 
-            // Counter animation
+            // Animación de los contadores (estudiantes, páginas, etc.)
             function animateCounter(elementId, target, duration = 2000) {
                 const element = document.getElementById(elementId);
                 const start = 0;
@@ -745,7 +758,7 @@
                 }, 16);
             }
             
-            // Start counters when section is visible
+            // Inicia las animaciones de los contadores cuando la sección es visible
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -763,7 +776,7 @@
                 observer.observe(counterSection);
             }
 
-            // Video play button
+            // Control del botón de reproducción de video
             const playBtn = document.getElementById('playVideoBtn');
             const videoIframe = document.getElementById('ebookVideo');
             
@@ -775,7 +788,7 @@
                 });
             }
 
-            // FAQ accordion
+            // Funcionalidad de acordeón para las preguntas frecuentes
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
                 question.addEventListener('click', () => {
@@ -802,7 +815,7 @@
                 });
             });
 
-            // Form submission handling
+            // Manejo del envío del formulario (simulación)
             const form = document.getElementById('ebookForm');
             if (form) {
                 form.addEventListener('submit', function(e) {
@@ -837,7 +850,7 @@
                 });
             }
 
-            // Add smooth scroll to all links
+            // Agrega scroll suave a todos los enlaces internos
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
