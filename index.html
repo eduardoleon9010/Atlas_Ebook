@@ -506,17 +506,12 @@
   </div>
 </section>
 
-<!-- ===== INICIO: BLOQUE DEL FORMULARIO (REEMPLAZAR SÓLO ESTA SECCIÓN) ===== -->
+<!-- ===== INICIO: FORMULARIO + SCRIPT (REEMPLAZAR SÓLO ESTA SECCIÓN) ===== -->
 <section id="form" class="container mx-auto px-4 py-12">
   <div class="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-md">
     <h2 class="text-2xl font-bold mb-4">Obtén tu Atlas Interactivo</h2>
-    <p class="text-gray-600 mb-6">Completa este formulario para recibir el enlace de descarga del ebook.</p>
+    <p class="text-gray-600 mb-6">Completa el formulario y recibirás la descarga. Si la automática falla, utiliza el enlace manual.</p>
 
-    <!--
-      FORMULARIO configurado para FormSubmit con el correo que está en tu index.html:
-      action = "https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com"
-      (si en el futuro cambias el correo, reemplázalo aquí)
-    -->
     <form id="ebookForm" name="ebookForm"
           method="POST"
           action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com"
@@ -528,19 +523,19 @@
         <input id="name" name="name" type="text" required minlength="2" class="form-input w-full mt-2 p-3 border rounded-md" placeholder="Tu nombre completo" />
       </div>
 
-      <!-- Correo -->
+      <!-- Email usuario -->
       <div class="mb-4">
         <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
         <input id="email" name="email" type="email" required class="form-input w-full mt-2 p-3 border rounded-md" placeholder="tu@correo.com" />
       </div>
 
-      <!-- Organización / Rol (opcional) -->
+      <!-- Rol -->
       <div class="mb-4">
         <label for="role" class="block text-sm font-medium text-gray-700">Organización / Rol (opcional)</label>
         <input id="role" name="role" type="text" class="form-input w-full mt-2 p-3 border rounded-md" placeholder="Ej. Profesor, Estudiante..." />
       </div>
 
-      <!-- Mensaje (opcional) -->
+      <!-- Mensaje -->
       <div class="mb-4">
         <label for="message" class="block text-sm font-medium text-gray-700">Mensaje (opcional)</label>
         <textarea id="message" name="message" rows="4" class="form-input w-full mt-2 p-3 border rounded-md" placeholder="Déjanos un comentario..."></textarea>
@@ -552,18 +547,19 @@
         <label for="consent" class="text-sm text-gray-700">Acepto recibir el ebook y comunicaciones relacionadas.</label>
       </div>
 
-      <!-- Honeypot (oculto para bots) -->
+      <!-- Honeypot -->
       <div style="display:none;">
         <label>Si ves esto no rellenes</label>
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
       </div>
 
-      <!-- Campos ocultos para FormSubmit -->
-      <!-- _next: página a la que va a redirigir FormSubmit si se usa envío clásico.
-           Puedes poner aquí una página de "gracias" en tu dominio o dejarla como en el ejemplo. -->
-      <input type="hidden" name="_next" value="www.atlasinteractivodeprogramacionenpython.com.pdf" />
+      <!-- Campos ocultos importantes -->
+      <input type="hidden" id="_replyto" name="_replyto" value="" />
+      <input type="hidden" id="_cc" name="_cc" value="" />
+      <input type="hidden" id="_autoresponse" name="_autoresponse" value="Gracias por solicitar el Atlas Interactivo. En breve revisa tu correo para el enlace de descarga. ¡Disfruta!" />
       <input type="hidden" name="_subject" value="Descarga: Atlas Interactivo" />
-      <input type="hidden" name="_captcha" value="false" />
+      <!-- _next puede apuntar a tu página 'gracias' en GitHub Pages; opcional -->
+      <input type="hidden" name="_next" value="https://TU-USUARIO.github.io/TU-REPO/gracias.html" />
 
       <!-- Botón enviar -->
       <div class="flex items-center gap-4">
@@ -579,35 +575,35 @@
       </div>
     </form>
 
-    <!-- iframe oculto para fallback (evita recargar la página) -->
+    <!-- Enlace manual visible para descargar si la automática falla -->
+    <div class="mt-4">
+      <a id="manualDownloadLink" href="atlas-python.pdf" download class="text-sm underline">Descargar manualmente el Atlas (si la automática no funciona).</a>
+    </div>
+
+    <!-- Iframe oculto (fallback clásico) -->
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-    <!-- PANEL DE DIAGNÓSTICO VISIBLE -->
+    <!-- Panel diagnóstico -->
     <div id="debugPanel" class="mt-6 p-4 bg-gray-50 border rounded text-sm text-gray-800" style="max-height:220px; overflow:auto;">
       <strong>Panel de diagnóstico</strong>
       <div id="debugLogs" style="white-space:pre-wrap; margin-top:8px; font-family:monospace; font-size:13px; color:#334155;">
-        Aquí se mostrarán mensajes técnicos: estado de la petición, errores CORS, recomendaciones.
+        Aquí verás logs sobre el envío y la descarga.
       </div>
     </div>
   </div>
 </section>
-	<!-- ===== FIN: BLOQUE DEL FORMULARIO ===== -->
 
-	<!-- ===== INICIO: SCRIPT DE ENVÍO + DIAGNÓSTICO  ===== -->
 <script>
 /*
-  Script de manejo del formulario:
-  - Intenta enviar con fetch para capturar la respuesta (útil para debugging).
-  - Si fetch falla (CORS/redirect/network), hace fallback con form.submit() hacia el iframe oculto.
-  - Muestra logs en pantalla en el panel de diagnóstico.
-  - Usa SweetAlert2 (ya incluido en tu página) para mensajes al usuario.
-  - Comentarios en español dentro del script.
+  Restauración de descarga + envío a FormSubmit.
+  - Descarga automática se lanza 3s después de form.submit() para evitar bloqueos del navegador.
+  - form.submit() se usa para que FormSubmit procese autoresponse/cc/_replyto.
+  - Comentarios en español.
 */
 
 (function() {
-  // URL pública del ebook para descarga automática (si está en la misma carpeta, mantiene solo el nombre)
-  // Reemplaza por la URL completa si el ebook está alojado fuera.
-  const EBOOK_URL = "atlas-python.pdf";
+  // Si el PDF está en GitHub Pages en otra ruta, reemplaza aquí la URL completa.
+  const EBOOK_URL = "atlas-python.pdf"; // <-- reemplaza por URL completa si es necesario
 
   const form = document.getElementById('ebookForm');
   const debug = document.getElementById('debugLogs');
@@ -616,15 +612,16 @@
   const btnSpinner = document.getElementById('btnSpinner');
   const statusText = document.getElementById('statusText');
   const hiddenFrame = document.getElementById('hidden_iframe');
+  const replyInput = document.getElementById('_replyto');
+  const ccInput = document.getElementById('_cc');
+  const manualLink = document.getElementById('manualDownloadLink');
 
-  // Añade entradas al panel de diagnóstico con timestamp
-  function logDebug(msg) {
+  function log(msg) {
     const ts = new Date().toLocaleString();
     debug.textContent = `[${ts}] ${msg}\n\n` + debug.textContent;
     console.log(msg);
   }
 
-  // Estado visual de carga
   function setLoading(on) {
     if (on) {
       submitBtn.disabled = true;
@@ -639,7 +636,7 @@
     }
   }
 
-  // Intento de descarga automática del ebook
+  // Descarga forzada del PDF (crea un <a> y hace click)
   function triggerDownload(url) {
     try {
       const a = document.createElement('a');
@@ -647,39 +644,26 @@
       a.download = '';
       document.body.appendChild(a);
       a.click();
-      setTimeout(() => a.remove(), 500);
-      logDebug('Intento de descarga automática lanzado para: ' + url);
-    } catch (e) {
-      logDebug('Error al intentar descarga automática: ' + (e && e.message ? e.message : String(e)));
+      setTimeout(() => a.remove(), 700);
+      log('Intento de descarga automática iniciado: ' + url);
+    } catch (err) {
+      log('Error al intentar descarga automática: ' + (err && err.message ? err.message : String(err)));
     }
   }
 
-  // Manejo del evento submit
-  form.addEventListener('submit', async function(e) {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Validación nativa del navegador
+    // Validación nativa
     if (!form.checkValidity()) {
       form.reportValidity();
-      logDebug('Validación nativa falló: campos requeridos incompletos.');
+      log('Validación HTML5 fallida: completa los campos requeridos.');
       return;
     }
 
-    // Honeypot: si está relleno, abortamos silenciosamente
-    const honey = form.querySelector('input[name="_honey"]');
-    if (honey && honey.value) {
-      logDebug('Honeypot detectado — posible bot. Abortando envío.');
-      return;
-    }
+    // Honeypot
+    const hon
 
-    const action = form.getAttribute('action') || '';
-    if (!action) {
-      Swal.fire({ icon: 'error', title: 'Error de configuración', text: 'El atributo action del formulario no está configurado.' });
-      logDebug('ERROR: action del form vacío.');
-      return;
-    }
-
-    se
 
 
     
