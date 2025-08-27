@@ -484,26 +484,26 @@
 					(function() {
 					  const form = document.getElementById("ebookForm");
 
-					  // URL del PDF (ajusta según tu repo GitHub Pages)
+					  // 🔗 Ajusta la URL del PDF EXACTAMENTE según tu repo
 					  const EBOOK_URL = "https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf";
 
-					  // URL del flipbook (visualización online)
+					  // 🔗 Flipbook en Heyzine
 					  const FLIPBOOK_URL = "https://heyzine.com/flip-book/818182e95c.html#page/1";
 
-					  // URL de respaldo en Drive
+					  // 🔗 Copia en Google Drive
 					  const DRIVE_URL = "https://drive.google.com/file/d/1krV4cH-vM7rIOW_XqYefxrDj-KE5FQHt/view?usp=sharing";
 
 					  form.addEventListener("submit", function() {
-						// Espera un momento para dejar enviar los datos a FormSubmit
+						// dejamos tiempo para que FormSubmit procese el envío
 						setTimeout(() => {
 						  Swal.fire({
 							title: '¡Registro exitoso! 🎉',
-							text: 'Estamos preparando tu Atlas Interactivo...',
+							text: 'Tu Atlas está listo. Revisa también tu correo 📧',
 							icon: 'success',
-							confirmButtonText: 'Descargar ahora',
+							confirmButtonText: 'Descargar Atlas',
 							confirmButtonColor: '#00C4F5'
 						  }).then(() => {
-							// 1️⃣ Forzar descarga del PDF
+							// 1️⃣ Descargar PDF
 							const a = document.createElement('a');
 							a.href = EBOOK_URL;
 							a.setAttribute("download", "Atlas_Interactivo_Python.pdf");
@@ -511,7 +511,7 @@
 							a.click();
 							a.remove();
 
-							// 2️⃣ Después de 3 segundos, abrir flipbook (y de paso el Drive)
+							// 2️⃣ Abrir enlaces extra luego de 3 segundos
 							setTimeout(() => {
 							  window.open(FLIPBOOK_URL, '_blank');
 							  window.open(DRIVE_URL, '_blank');
