@@ -470,96 +470,87 @@
         </div>
     </section>
 
-	<!-- ===== FORMULARIO OPTIMIZADO Y FUNCIONAL ===== -->
-	<section id="form" class="py-16 bg-gray-50 animate-fadeIn">
+	<!-- ===== FORMULARIO FUNCIONAL ===== -->
+	<section id="form" class="py-16 bg-gray-50">
 	  <div class="container mx-auto px-4">
 		<div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
 		  
 		  <!-- Encabezado -->
-		  <div class="bg-gradient-to-r from-primary-light to-primary p-6 text-center">
+		  <div class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] p-6 text-center">
 			<h2 class="text-3xl font-bold text-white mb-2">¡Obtén tu Atlas Interactivo GRATIS!</h2>
-			<p class="text-white opacity-90">Completa el formulario y recibe instantáneamente tu ebook</p>
+			<p class="text-white opacity-90">Completa el formulario y recibe tu ebook en tu correo</p>
 		  </div>
-		  
+
 		  <!-- Formulario -->
 		  <div class="p-6 md:p-8">
 			<form id="ebookForm"
 				  action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com"
 				  method="POST"
-				  target="hidden_iframe"
 				  class="space-y-4">
 
 			  <!-- Configuración oculta -->
 			  <input type="hidden" name="_subject" value="Nuevo registro - Atlas Python">
 			  <input type="hidden" name="_captcha" value="false">
 			  <input type="hidden" name="_template" value="table">
-
+			  
 			  <!-- Autorespuesta al usuario -->
 			  <input type="hidden" name="_autoresponse" 
-					 value="¡Gracias por registrarte en Atlas Python! 🎉
+					 value="¡Gracias por registrarte en Atlas Python! 🎉 
 	Aquí tienes tu Atlas:
 	👉 https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf">
 
 			  <!-- Campos -->
 			  <input type="text" name="name" placeholder="Tu nombre" required
-					 class="form-input w-full p-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-primary">
+					 class="w-full p-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-[#00C4F5]">
 			  
 			  <input type="email" name="email" placeholder="Tu correo" required
-					 class="form-input w-full p-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-primary">
+					 class="w-full p-3 border rounded-lg border-gray-300 focus:ring-2 focus:ring-[#00C4F5]">
 
 			  <button type="submit"
-					  class="w-full bg-gradient-to-r from-primary-light to-primary text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
+					  class="w-full bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
 				Descargar gratis ahora
 			  </button>
 			</form>
-
-			<!-- Script -->
-			<script>
-			  (function () {
-				const form = document.getElementById("ebookForm");
-				const EBOOK_URL   = "https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf";
-				const FLIPBOOK_URL = "https://heyzine.com/flip-book/818182e95c.html#page/1";
-				const DRIVE_URL   = "https://drive.google.com/file/d/1krV4cH-vM7rIOW_XqYefxrDj-KE5FQHt/view?usp=sharing";
-
-				form.addEventListener("submit", function () {
-				  setTimeout(() => {
-					Swal.fire({
-					  title: '¡Registro exitoso! 🎉',
-					  html: `
-						<p class="mb-4">Tu Atlas está listo.<br>
-						También te enviamos un correo 📧.</p>
-						<a href="${EBOOK_URL}" target="_blank" 
-						   class="inline-block bg-[#00C4F5] text-white px-4 py-2 rounded-lg font-bold">
-						   📕 Descargar Atlas (PDF)
-						</a>
-						<br><br>
-						<a href="${FLIPBOOK_URL}" target="_blank" class="text-blue-600 underline">📖 Ver versión flipbook</a><br>
-						<a href="${DRIVE_URL}" target="_blank" class="text-blue-600 underline">☁️ Copia en Google Drive</a>
-					  `,
-					  icon: 'success',
-					  showConfirmButton: false,
-					  allowOutsideClick: true
-					});
-				  }, 1000);
-				});
-			  })();
-			</script>
-
-			<!-- Enlace manual de respaldo -->
-			<div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-200 text-center">
-			  <p class="text-sm text-green-800 mb-2">¿Problemas con el formulario?</p>
-			  <a href="https://heyzine.com/flip-book/818182e95c.html#page/1" 
-				 class="text-green-700 hover:text-green-900 underline text-sm font-medium" target="_blank">
-				Descargar manualmente el Atlas Interactivo
-			  </a>
-			</div>
 		  </div>
 		</div>
 	  </div>
-
-	  <!-- Iframe oculto para FormSubmit -->
-	  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 	</section>
+
+	<!-- Script -->
+	<script>
+	  document.getElementById("ebookForm").addEventListener("submit", function (e) {
+		e.preventDefault(); // detenemos envío momentáneamente
+		const form = e.target;
+
+		// Mandamos datos con fetch
+		fetch(form.action, {
+		  method: "POST",
+		  body: new FormData(form)
+		}).then(response => {
+		  if (response.ok) {
+			Swal.fire({
+			  title: '¡Registro exitoso! 🎉',
+			  html: `
+				<p>Tu Atlas está listo.<br>También te enviamos un correo 📧.</p>
+				<br>
+				<a href="https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf" target="_blank"
+				   class="inline-block bg-[#00C4F5] text-white px-4 py-2 rounded-lg font-bold">
+				   📕 Descargar Atlas (PDF)
+				</a>
+			  `,
+			  icon: 'success',
+			  showConfirmButton: false,
+			  allowOutsideClick: true
+			});
+			form.reset();
+		  } else {
+			Swal.fire("Error", "Hubo un problema enviando el formulario ❌", "error");
+		  }
+		}).catch(() => {
+		  Swal.fire("Error", "No pudimos conectar con el servidor ⚠️", "error");
+		});
+	  });
+	</script>
 
 
 
