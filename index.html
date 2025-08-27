@@ -131,89 +131,41 @@
 			<h2 class="text-3xl font-bold text-gray-900 mb-2">Descarga tu Atlas Interactivo gratis</h2>
 			<p class="text-gray-600 mb-6">Impulsa tus habilidades en Python con nuestro Atlas Interactivo, ¡listo para ti en un clic!</p>
 
-			<form id="atlasForm" class="space-y-4">
-			  <!-- Campos visibles -->
-			  <div>
-				<label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
-				<input type="text" id="name" name="Nombre completo" required 
-				  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-			  </div>
 
-			  <div>
-				<label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
-				<input type="email" id="email" name="Correo electrónico" required 
-				  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-			  </div>
+			<script>
+			document.getElementById("atlasForm").addEventListener("submit", function(e) {
+			  e.preventDefault();
+			  const formData = new FormData(this);
 
-			  <div>
-				<label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono / WhatsApp</label>
-				<input type="tel" id="phone" name="Teléfono"
-				  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-			  </div>
+			  fetch("https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com", {
+				method: "POST",
+				body: formData
+			  }).then(response => {
+				if (response.ok) {
+				  // 1) Descargar PDF desde GitHub raw URL
+				  const link = document.createElement("a");
+				  link.href = "https://raw.githubusercontent.com/eduardoleon9010/Atlas_interactivo_de_programacion_en_Python/main/www.atlasinteractivodeprogramacionenpython.com.pdf";
+				  link.download = "Atlas_Interactivo_Python.pdf";
+				  document.body.appendChild(link);
+				  link.click();
+				  document.body.removeChild(link);
 
-			  <div>
-				<label for="country" class="block text-gray-700 font-medium mb-2">País / Ciudad</label>
-				<input type="text" id="country" name="País / Ciudad"
-				  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-			  </div>
+				  // 2) Esperar un momento y abrir Heyzine en otra pestaña
+				  setTimeout(() => {
+					window.open("https://heyzine.com/flip-book/818182e95c.html#page/1", "_blank");
+				  }, 800);
 
-			  <div>
-				<label for="role" class="block text-gray-700 font-medium mb-2">Ocupación</label>
-				<select id="role" name="Ocupación" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00C4F5]">
-				  <option value="">Selecciona una opción</option>
-				  <option value="Estudiante">Estudiante</option>
-				  <option value="Docente">Docente</option>
-				  <option value="Profesional">Profesional</option>
-				  <option value="Otro">Otro</option>
-				</select>
-			  </div>
+				  alert("✅ Registro exitoso. Tu PDF se descargó y se abrió el Atlas.");
+				} else {
+				  alert("⚠️ Error al enviar los datos. Intenta de nuevo por favor.");
+				}
+			  }).catch(err => {
+				console.error(err);
+				alert("❌ No se pudo enviar el formulario. Revisa tu conexión.");
+			  });
+			});
+			</script>
 
-			  <!-- Botón -->
-			  <button type="submit" class="w-full bg-[#00C4F5] text-white px-6 py-4 rounded-full font-bold text-lg btn-primary inline-block">
-				Descargar gratis
-			  </button>
-
-			  <p class="text-sm text-gray-500 mt-4">
-				Tu información está segura. Nunca compartiremos tus datos.
-			  </p>
-			</form>
-		  </div>
-		</div>
-	  </div>
-	</section>
-
-	<script>
-	  document.getElementById("atlasForm").addEventListener("submit", function(e) {
-		e.preventDefault();
-
-		// Recolectar datos
-		const formData = new FormData(this);
-
-		// Enviar a FormSubmit (correo del dueño)
-		fetch("https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com", {
-		  method: "POST",
-		  body: formData
-		}).then(response => {
-		  if (response.ok) {
-			// Abre el Atlas en Heyzine en nueva pestaña
-			window.open("https://heyzine.com/flip-book/818182e95c.html#page/1", "_blank");
-
-			// Descarga automática del PDF
-			const link = document.createElement("a");
-			link.href = "/www.atlasinteractivodeprogramacionenpython.com.pdf"; // PDF en tu servidor
-			link.download = "Atlas_Interactivo_Python.pdf";
-			link.click();
-
-			alert("✅ Registro exitoso. El Atlas se abrió y también se descargó en PDF.");
-		  } else {
-			alert("⚠️ Hubo un error al enviar el formulario.");
-		  }
-		}).catch(error => {
-		  console.error("Error:", error);
-		  alert("❌ No se pudo enviar el formulario.");
-		});
-	  });
-	</script>
 
 
     <!-- Benefits Section -->
