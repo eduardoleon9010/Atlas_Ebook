@@ -526,14 +526,14 @@
 	const ccInput = document.getElementById("_cc");
 
 	form.addEventListener("submit", function() {
-	  // Capturar email y asignar
+	  // Capturar email del usuario
 	  const userEmail = document.getElementById("email").value.trim();
 	  replyInput.value = userEmail;
 	  ccInput.value = userEmail;
 
-	  // FormSubmit recibe los datos porque ya no usamos preventDefault()
+	  // ✅ El formulario ahora sí se envía a FormSubmit (no lo bloqueamos)
 
-	  // Disparar la descarga después de 3s
+	  // Descargar PDF automáticamente después de 3s
 	  setTimeout(() => {
 		const a = document.createElement("a");
 		a.href = EBOOK_URL;
@@ -541,8 +541,10 @@
 		document.body.appendChild(a);
 		a.click();
 		a.remove();
+		console.log("Descarga iniciada: " + EBOOK_URL);
 	  }, 3000);
 	});
+
 
     <!-- Sección de CTA final (última oportunidad) -->
     <section class="py-16 bg-gradient-to-r from-primary-light to-primary animate-fadeIn delay-1300">
