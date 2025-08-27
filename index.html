@@ -480,104 +480,47 @@
                 </div>
                 
                 <div class="p-6 md:p-8">
-					<form id="ebookForm" class="space-y-6" 
-						  action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" 
-						  method="POST" 
-						  target="hidden_iframe">
+					<script>
+					(function() {
+					  const form = document.getElementById("ebookForm");
 
-						<!-- Nombre -->
-						<div>
-							<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo *</label>
-							<input type="text" id="name" name="name" required minlength="2"
-								   class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-light focus:ring-2 focus:ring-primary-light/20 transition-all duration-200 form-input"
-								   placeholder="¿Cómo te llamas?">
-						</div>
+					  // URL del PDF (ajusta según tu repo GitHub Pages)
+					  const EBOOK_URL = "https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf";
 
-						<!-- Email -->
-						<div>
-							<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico *</label>
-							<input type="email" id="email" name="_replyto" required
-								   class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-primary-light focus:ring-2 focus:ring-primary-light/20 transition-all duration-200 form-input"
-								   placeholder="tu@email.com">
-						</div>
+					  // URL del flipbook (visualización online)
+					  const FLIPBOOK_URL = "https://heyzine.com/flip-book/818182e95c.html#page/1";
 
-						<!-- Rol/Ocupación -->
-						<div>
-							<label for="role" class="block text-sm font-medium text-gray-700 mb-2">¿Qué describes mejor tu situación?</label>
-							<select id="role" name="role" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200">
-								<option value="">Selecciona una opción</option>
-								<option value="estudiante">Estudiante</option>
-								<option value="profesor">Profesor/Educador</option>
-								<option value="profesional">Profesional en transición</option>
-								<option value="empresario">Empresario/Emprendedor</option>
-								<option value="otro">Otro</option>
-							</select>
-						</div>
+					  // URL de respaldo en Drive
+					  const DRIVE_URL = "https://drive.google.com/file/d/1krV4cH-vM7rIOW_XqYefxrDj-KE5FQHt/view?usp=sharing";
 
-						<!-- Intereses -->
-						<div>
-							<label class="block text-sm font-medium text-gray-700 mb-2">¿Qué te interesa aprender? (opcional)</label>
-							<div class="space-y-2">
-								<label class="flex items-center">
-									<input type="checkbox" name="interests" value="fundamentos" class="checkbox mr-3">
-									<span>Fundamentos de Python</span>
-								</label>
-								<label class="flex items-center">
-									<input type="checkbox" name="interests" value="web" class="checkbox mr-3">
-									<span>Desarrollo Web</span>
-								</label>
-								<label class="flex items-center">
-									<input type="checkbox" name="interests" value="data" class="checkbox mr-3">
-									<span>Ciencia de Datos</span>
-								</label>
-								<label class="flex items-center">
-									<input type="checkbox" name="interests" value="automation" class="checkbox mr-3">
-									<span>Automatización</span>
-								</label>
-							</div>
-						</div>
+					  form.addEventListener("submit", function() {
+						// Espera un momento para dejar enviar los datos a FormSubmit
+						setTimeout(() => {
+						  Swal.fire({
+							title: '¡Registro exitoso! 🎉',
+							text: 'Estamos preparando tu Atlas Interactivo...',
+							icon: 'success',
+							confirmButtonText: 'Descargar ahora',
+							confirmButtonColor: '#00C4F5'
+						  }).then(() => {
+							// 1️⃣ Forzar descarga del PDF
+							const a = document.createElement('a');
+							a.href = EBOOK_URL;
+							a.setAttribute("download", "Atlas_Interactivo_Python.pdf");
+							document.body.appendChild(a);
+							a.click();
+							a.remove();
 
-						<!-- Consentimiento -->
-						<div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-							<label class="flex items-start">
-								<input type="checkbox" id="consent" name="consent" required class="checkbox mt-1 mr-3">
-								<span class="text-sm text-gray-700">
-									Sí, acepto recibir el Atlas Interactivo de Python y futuras comunicaciones. 
-									Puedo darme de baja en cualquier momento.
-								</span>
-							</label>
-						</div>
-
-						<!-- Campos ocultos -->
-						<input type="hidden" name="_subject" value="Nueva descarga del Atlas Interactivo de Python">
-						<input type="hidden" name="_template" value="table">
-						<input type="hidden" name="_captcha" value="false">
-						<input type="hidden" name="_autoresponse" 
-						value="¡Hola! 🎉 Gracias por registrarte para recibir el Atlas Interactivo de Python.
-
-					👉 <a href='https://eduardoleon9010.github.io/Atlas_Ebook/www.atlasinteractivodeprogramacionenpython.com.pdf' 
-					style='display:inline-block;padding:12px 20px;background:#005B96;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;margin:10px 0;'>
-					📘 Descargar Atlas Interactivo
-					</a>
-
-					👉 <a href='https://eduardoleon9010.github.io/Atlas_Ebook/material-extra.pdf' 
-					style='display:inline-block;padding:12px 20px;background:#00C4F5;color:#fff;text-decoration:none;border-radius:6px;font-weight:bold;margin:10px 0;'>
-					📂 Material Extra
-					</a>
-
-					Guarda este correo para acceder cuando quieras 🚀">
-
-						<!-- Honeypot -->
-						<div style="display: none;">
-							<input type="text" name="_honey">
-						</div>
-
-						<!-- Botón -->
-						<button type="submit"
-								class="w-full bg-gradient-to-r from-primary-light to-primary hover:from-primary hover:to-primary-dark text-white font-bold py-4 px-6 rounded-lg transition-all duration-300">
-							🎓 Obtener mi Atlas Gratis
-						</button>
-					</form>
+							// 2️⃣ Después de 3 segundos, abrir flipbook (y de paso el Drive)
+							setTimeout(() => {
+							  window.open(FLIPBOOK_URL, '_blank');
+							  window.open(DRIVE_URL, '_blank');
+							}, 3000);
+						  });
+						}, 1200);
+					  });
+					})();
+					</script>
 
                     
                     <!-- Enlace de descarga manual -->
