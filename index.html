@@ -480,7 +480,7 @@
 			  action="https://formsubmit.co/atlasinteractivodeprogramacion@gmail.com" 
 			  target="hidden_iframe" novalidate>
 		  
-		  <!-- Nombre -->
+		  <!-- Nombre --> const 
 		  <div class="mb-4">
 			<label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
 			<input id="name" name="name" type="text" required minlength="2"
@@ -527,22 +527,21 @@
 		  <input type="hidden" name="_replyto" id="_replyto" />
 		  <input type="hidden" name="_cc" id="_cc" />
 		  <input type="hidden" name="_subject" value="Descarga: Atlas Interactivo" />
-		  <input type="hidden" name="_autoresponse" value="Gracias por solicitar el Atlas Interactivo. En breve revisa tu correo para el enlace de descarga. ¡Disfruta!" />
-		  <input type="hidden" name="_next" value="https://TU-USUARIO.github.io/TU-REPO/gracias.html" />
+		  <input type="hidden" name="_next" value="www.atlasinteractivodeprogramacionenpython.com.pdf"/>
+		  <input type="hidden" name="_autoresponse" 
+		  value="¡Hola! 🎉 Gracias por solicitar el Atlas Interactivo de Python. 
 
+		  Aquí tienes tu enlace de descarga: 
+		  https://www.atlasinteractivodeprogramacionenpython.com.pdf
+
+		  Guarda este correo para volver a acceder cuando quieras. ¡Disfrútalo! 🚀">
+		  
 		  <!-- Botón -->
 		  <button id="submitBtn" type="submit" 
 				  class="bg-gradient-to-r from-[#00C4F5] to-[#005B96] text-white px-6 py-3 rounded-full font-semibold btn-primary">
 			<span id="btnText">Enviar y descargar</span>
 		  </button>
 		</form>
-
-		<!-- Enlace manual -->
-		<div class="mt-4">
-		  <a id="manualDownloadLink" href="atlas.pdf" download class="text-sm underline">
-			Descargar manualmente el Atlas
-		  </a>
-		</div>
 
 		<!-- iframe oculto -->
 		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
@@ -551,7 +550,7 @@
 
 	<script>
 	/* Configuración del PDF (sube atlas.pdf al mismo repo que index.html) */
-	const EBOOK_URL = "atlas.pdf"; 
+	const EBOOK_URL = "www.atlasinteractivodeprogramacionenpython.com.pdf"; 
 
 	const form = document.getElementById("ebookForm");
 	const replyInput = document.getElementById("_replyto");
