@@ -8,8 +8,9 @@
   <em>13 secciones, ejercicios prácticos, proyectos reales y contenido actualizado.</em>
 </p>
 
- <h4 align="center">¿Qué obtendrás?</h4>
 
+
+**¿Qué obtendrás?**
 <ul>
   ✅ Aprende Python desde lo básico hasta nivel avanzado
 
@@ -23,7 +24,8 @@
 </ul>
 
 
-📥 **¡Descarga tu Atlas GRATIS!**
+ <h4 align="center">📥 **¡Descarga tu Atlas GRATIS!</h4>
+
 
 <p align="center">
   <a href="www.atlasinteractivodeprogramacionenpython.com.pdf" target="_blank">
