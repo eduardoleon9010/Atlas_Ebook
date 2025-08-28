@@ -43,7 +43,7 @@
 
 **Vista previa**
 
-<p align="">
+<p align="center">
   <img src="img/1.1.png" alt="Vista previa del Atlas" width="600"/>
 </p>
 
@@ -57,7 +57,7 @@
   </a>
 </p>
 
-<p align="">
+<p align="center">
   Consulta cómo protegemos y usamos tu información en nuestra
   <a href="doc/politicas-privacidad.md">Política de Privacidad</a>.
 </p>
@@ -66,7 +66,7 @@
 
 **Contacto**
 
-<p align="">
+<p align="center">
   ¿Tienes dudas? Escríbenos a:<br>
   📧 <strong>servicionexatech@gmail.com</strong>
 </p>
