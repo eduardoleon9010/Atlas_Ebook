@@ -521,99 +521,199 @@
             </div>
         </div>
     </section>
-
-	<!-- Sección de formulario optimizada -->
-	<section id="form" class="py-16 bg-white animate-fadeIn delay-1100">
-		<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#f5f7fa" style="padding:20px 0;">
-			<tr>
-				<td>
-					<table align="center" width="570" border="0" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);padding:20px;">
-						<tr><td height="30"></td></tr>
-
-						<!-- Saludo -->
-						<tr>
-							<td align="center" style="font-size:22px;color:#005B96;line-height:28px;font-weight:700;">
-								¡Hola {{ contact.FIRSTNAME | default:'Amigo' }}!
-							</td>
-						</tr>
-						<tr><td height="15"></td></tr>
-
-						<!-- Mensaje -->
-						<tr>
-							<td align="center" style="font-size:16px;color:#333333;line-height:26px;">
-								Completa el formulario para recibir instantáneamente tu <strong>Atlas Interactivo de Python</strong>.
-							</td>
-						</tr>
-						<tr><td height="25"></td></tr>
-
-						<!-- Formulario en tabla para email -->
-						<tr>
-							<td align="center">
-								<table width="100%" cellpadding="0" cellspacing="0" border="0">
-									<tr>
-										<td>
-											<label style="display:block;font-size:14px;color:#333333;margin-bottom:5px;">Nombre completo *</label>
-											<input type="text" name="name" placeholder="Tu nombre completo" style="width:100%;padding:12px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;">
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<label style="display:block;font-size:14px;color:#333333;margin-bottom:5px;">Correo electrónico *</label>
-											<input type="email" name="email" placeholder="tu@email.com" style="width:100%;padding:12px;border-radius:6px;border:1px solid #ccc;margin-bottom:15px;">
-										</td>
-									</tr>
-									<tr>
-										<td align="center">
-											<button type="submit" style="display:inline-block;padding:14px 28px;background-color:#00C4F5;color:#ffffff;font-weight:bold;border-radius:8px;font-size:16px;border:none;cursor:pointer;">
-												🎓 Obtener mi Atlas Gratis
-											</button>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-
-						<tr><td height="30"></td></tr>
-						<tr>
-							<td align="center" style="font-size:12px;color:#aaaaaa;">
-								Tus datos están protegidos y no serán compartidos con terceros.
-							</td>
-						</tr>
-						<tr><td height="40"></td></tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</section>
-
-	<!-- Sección de CTA final -->
-	<section class="py-16 bg-gradient-to-r from-primary-light to-primary animate-fadeIn delay-1300">
-		<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
-			<tr>
-				<td align="center">
-					<table width="570" border="0" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,0.08);">
-						<tr><td height="30"></td></tr>
-						<tr>
-							<td align="center" style="font-size:20px;color:#ffffff;font-weight:700;">
-								¡No pierdas la oportunidad de explorar tu Atlas!
-							</td>
-						</tr>
-						<tr><td height="15"></td></tr>
-						<tr>
-							<td align="center">
-								<a href="https://heyzine.com/flip-book/818182e95c.html#page/1" target="_blank" style="display:inline-block;padding:14px 28px;background-color:#ffffff;color:#005B96;font-weight:bold;border-radius:8px;margin-bottom:12px;font-size:16px;text-decoration:none;">
-									Ver Atlas Ahora
-								</a>
-							</td>
-						</tr>
-						<tr><td height="40"></td></tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</section>
-	
-	
+    
+    <!-- Sección de CTA final (última oportunidad) -->
+    <section class="py-16 bg-gradient-to-r from-primary-light to-primary animate-fadeIn delay-1300">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                ¿Listo para dominar Python con nuestro Atlas Interactivo?
+            </h2>
+            <p class="text-lg md:text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+                Únete a más de 5,000 estudiantes que ya están aprendiendo Python de manera efectiva.
+            </p>
+            <a href="#form"
+                class="inline-block bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform transition-transform wave-effect">
+                Descargar gratis ahora <i class="fas fa-arrow-down ml-1"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Sección de formulario optimizada -->
+    <section id="form" class="py-16 bg-white animate-fadeIn delay-1100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Obtén tu Atlas Interactivo GRATIS</h2>
+                <p class="text-lg md:text-xl text-gray-600">Completa el formulario para recibir instantáneamente tu ebook</p>
+            </div>
+            
+            <div class="form-container bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-100">
+                <div class="progress-bar-form">
+                    <div class="progress-fill" id="formProgress"></div>
+                </div>
+                
+                <div class="step-indicator">
+                    <div class="step-dot active" id="step1Dot"></div>
+                    <div class="step-dot" id="step2Dot"></div>
+                    <div class="step-dot" id="step3Dot"></div>
+                </div>
+                
+                <!-- Paso 1: Información básica -->
+                <div class="form-step" id="step1">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Información básica</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo *</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-primary-light"
+                                   placeholder="Tu nombre completo">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-primary-light"
+                                   placeholder="tu@email.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <div></div> <!-- Espaciador -->
+                        <button type="button" onclick="nextStep(2)" 
+                                class="bg-gradient-to-r from-primary-light to-primary text-white px-6 py-3 rounded-lg font-medium hover:from-primary hover:to-primary-light transition-all duration-300">
+                            Siguiente <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Paso 2: Intereses -->
+                <div class="form-step hidden" id="step2">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Tu experiencia con Python</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-4">¿Cuál es tu nivel de experiencia? *</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary-light transition-colors">
+                                    <input type="radio" name="experience" value="beginner" class="mr-3" required>
+                                    <span>Principiante</span>
+                                </label>
+                                <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary-light transition-colors">
+                                    <input type="radio" name="experience" value="intermediate" class="mr-3">
+                                    <span>Intermedio</span>
+                                </label>
+                                <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary-light transition-colors">
+                                    <input type="radio" name="experience" value="advanced" class="mr-3">
+                                    <span>Avanzado</span>
+                                </label>
+                                <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary-light transition-colors">
+                                    <input type="radio" name="experience" value="teacher" class="mr-3">
+                                    <span>Profesor</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-4">¿Qué te interesa aprender? *</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="basics" class="checkbox mr-3">
+                                    <span>Fundamentos de Python</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="web" class="checkbox mr-3">
+                                    <span>Desarrollo Web (Django/Flask)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="data" class="checkbox mr-3">
+                                    <span>Análisis de Datos</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="ai" class="checkbox mr-3">
+                                    <span>Inteligencia Artificial</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" onclick="prevStep(1)" 
+                                class="text-gray-600 px-6 py-3 rounded-lg font-medium hover:text-gray-800 transition-colors">
+                            <i class="fas fa-arrow-left mr-2"></i> Atrás
+                        </button>
+                        <button type="button" onclick="nextStep(3)" 
+                                class="bg-gradient-to-r from-primary-light to-primary text-white px-6 py-3 rounded-lg font-medium hover:from-primary hover:to-primary-light transition-all duration-300">
+                            Siguiente <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Paso 3: Confirmación y envío -->
+                <div class="form-step hidden" id="step3">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">¡Último paso!</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-info-circle text-blue-500 text-lg"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-blue-700">
+                                        Al completar el formulario, recibirás inmediatamente el Atlas Interactivo en tu correo y acceso a todos los recursos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="flex items-start">
+                                <input type="checkbox" id="consent" name="consent" required class="checkbox mt-1 mr-3">
+                                <span class="text-sm text-gray-600">
+                                    Acepto recibir información sobre cursos, tutoriales y contenido educativo relacionado con Python. 
+                                    Puedo darme de baja en cualquier momento.
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <label class="flex items-start">
+                                <input type="checkbox" id="terms" name="terms" required class="checkbox mt-1 mr-3">
+                                <span class="text-sm text-gray-600">
+                                    He leído y acepto los 
+                                    <a href="#" class="text-primary-light hover:text-primary">términos y condiciones</a> 
+                                    y la 
+                                    <a href="#" class="text-primary-light hover:text-primary">política de privacidad</a>.
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation mt-6">
+                        <button type="button" onclick="prevStep(2)" 
+                                class="text-gray-600 px-6 py-3 rounded-lg font-medium hover:text-gray-800 transition-colors">
+                            <i class="fas fa-arrow-left mr-2"></i> Atrás
+                        </button>
+                        <button type="submit" 
+                                class="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 relative overflow-hidden">
+                            <span id="btnText">🎓 Obtener mi Atlas Gratis</span>
+                            <span id="btnSpinner" class="hidden absolute inset-0 flex items-center justify-center bg-green-600">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-sm text-gray-500">
+                    <i class="fas fa-lock mr-1"></i>
+                    Tus datos están protegidos y no serán compartidos con terceros
+                </p>
+            </div>
+        </div>
+    </section>
+    
     <!-- Sección de preguntas frecuentes (FAQ) -->
     <section class="py-16 bg-white animate-fadeIn delay-1500">
         <div class="container mx-auto px-4">
