@@ -1,17 +1,14 @@
-<h1 ="center"> Atlas Interactivo de Programacion en Python</h1>
+<h1 align="center"> Atlas Interactivo de Programacion en Python</h1>
 
 <p align="center">
   <img src="img/Atlas Interactivo.jpg" alt="Vista previa del Atlas" width="600"/>
 </p>
 
-
-<p ="">
-  <strong>Aprende Python desde cero hasta avanzado con nuestra guía interactiva GRATUITA</strong><br>
+<strong align="center">Aprende Python desde cero hasta avanzado con nuestra guía interactiva GRATUITA</strong><br>
   <em>13 secciones, ejercicios prácticos, proyectos reales y contenido actualizado.</em>
-</p>
 
 
-<h2 align=""> ¿Qué obtendrás?</h2>
+<h2> ¿Qué obtendrás?</h2>
 
 <ul>
   ✅ Aprende Python desde lo básico hasta nivel avanzado
@@ -26,7 +23,7 @@
 </ul>
 
 
-<h2 align="">📥 ¡Descarga tu Atlas GRATIS!</h2>
+<h2>📥 ¡Descarga tu Atlas GRATIS!</h2>
 
 <p align="">
   <a href="https://forms.gle/TU_FORMULARIO" target="_blank">
