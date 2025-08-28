@@ -8,7 +8,7 @@
   <em>13 secciones, ejercicios prácticos, proyectos reales y contenido actualizado.</em>
 </p>
 
-<h2> ¿Qué obtendrás?</h2>
+ **¿Qué obtendrás?**
 
 <ul>
   ✅ Aprende Python desde lo básico hasta nivel avanzado
@@ -32,7 +32,7 @@
 </p>
 
 
-<h3 align=""> ¿Por qué este Atlas es diferente?</h3>
+<h3> ¿Por qué este Atlas es diferente?</h3>
 
 <p align="center">
   ✅ Diseñado para autodidactas | ✅ Ejemplos claros | ✅ Comunidad activa
