@@ -88,7 +88,7 @@
             color: transparent;
         }
         
-        /* Efecto 3D para la portada del ebook */
+        /* Efecto 3D para la portada del Atlas */
         .ebook-cover {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
@@ -205,7 +205,7 @@
     
     <!-- Botón flotante de WhatsApp (optimizado para CTA) -->
     <div class="fixed bottom-6 right-6 z-50 group">
-        <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook"
+        <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20Atlas"
            class="w-16 h-16 bg-[#25D366] flex items-center justify-center rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 animate-float"
            target="_blank" aria-label="Contactar por WhatsApp">
             <i class="fab fa-whatsapp text-white text-2xl"></i>
@@ -268,12 +268,12 @@
                         </div>
                         <span class="ml-2 text-gray-600">4.8/5</span>
                     </div>
-                    <p class="text-gray-600 text-sm sm:text-base"><span class="font-bold text-gray-800">+5,000 estudiantes</span> ya mejoraron sus habilidades</p>
+                    <p class="text-gray-600 text-sm sm:text-base"><span class="font-bold text-gray-800">+1,000 estudiantes</span> ya mejoraron sus habilidades</p>
                 </div>
             </div>
         </div>
         
-        <!-- Imagen del producto (ebook) -->
+        <!-- Imagen del producto (Atlas) -->
         <div class="md:w-1/2 animate-fadeIn delay-200">
             <div class="relative max-w-md mx-auto">
                 <div class="absolute -inset-4 bg-gradient-to-r from-primary-light to-primary rounded-2xl opacity-75 blur-xl animate-pulse"></div>
@@ -282,7 +282,7 @@
                           alt="Portada del Atlas Interactivo de Python"
                           class="w-full h-auto"
                           loading="lazy">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 text-wblue">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 text-blue">
                         <h3 class="text-xl font-bold">Edición 2024</h3>
                     </div>
                     <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full font-bold text-sm transform rotate-12 shadow-lg">
@@ -303,7 +303,7 @@
                 </div>
                 <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 transform">
                     <div class="text-3xl md:text-4xl font-bold text-primary mb-2" id="pagesCounter">0</div>
-                    <p class="text-gray-600 text-sm md:text-base">Páginas</p>
+                    <p class="text-gray-600 text-sm md:text-base">Secciones</p>
                 </div>
                 <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 transform">
                     <div class="text-3xl md:text-4xl font-bold text-primary mb-2" id="exercisesCounter">0</div>
@@ -311,7 +311,7 @@
                 </div>
                 <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 transform">
                     <div class="text-3xl md:text-4xl font-bold text-primary mb-2" id="projectsCounter">0</div>
-                    <p class="text-gray-600 text-sm md:text-base">Proyectos</p>
+                    <p class="text-gray-600 text-sm md:text-base">Proyecto final</p>
                 </div>
             </div>
         </div>
@@ -549,7 +549,7 @@
                 ¿Listo para dominar Python con nuestro Atlas Interactivo?
             </h2>
             <p class="text-lg md:text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
-                Únete a más de 5,000 estudiantes que ya están aprendiendo Python de manera efectiva.
+                Únete a más de 1,000 estudiantes que ya están aprendiendo Python de manera efectiva.
             </p>
             <a href="#form"
                 class="inline-block bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform transition-transform wave-effect">
@@ -660,7 +660,7 @@
             
             <div class="border-t border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 mb-4 md:mb-0 text-sm">© 2023 Atlas Interactivo de Programación. Todos los derechos reservados.</p>
+                    <p class="text-gray-400 mb-4 md:mb-0 text-sm">© 2024 Atlas Interactivo de Programación. Todos los derechos reservados.</p>
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Términos</a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacidad</a>
@@ -828,10 +828,10 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        animateCounter('studentsCounter', 5000);
-                        animateCounter('pagesCounter', 120);
-                        animateCounter('exercisesCounter', 85);
-                        animateCounter('projectsCounter', 12);
+                        animateCounter('studentsCounter', 1000);
+                        animateCounter('pagesCounter', 13);
+                        animateCounter('exercisesCounter', 30);
+                        animateCounter('projectsCounter', 1);
                         observer.unobserve(entry.target);
                     }
                 });
@@ -1012,6 +1012,7 @@
     </script>
 </body>
 </html>
+
 
 
 
