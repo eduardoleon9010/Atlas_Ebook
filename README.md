@@ -7,7 +7,7 @@
 
 <p align="center">
   <strong>Aprende Python desde cero hasta avanzado con nuestra guía interactiva GRATUITA</strong><br>
-  <em>120+ páginas, ejercicios prácticos, proyectos reales y contenido actualizado.</em>
+  <em>13 secciones, ejercicios prácticos, proyectos reales y contenido actualizado.</em>
 </p>
 
 
