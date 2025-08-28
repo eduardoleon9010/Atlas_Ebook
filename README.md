@@ -24,12 +24,12 @@
 </ul>
 
 
- <h4 align="center"> ¡Descarga tu Atlas GRATIS! 📥</h4>
+ <h4 align="center"> ¡Descarga tu Atlas GRATIS! </h4>
 
 
 <p align="center">
   <a href="www.atlasinteractivodeprogramacionenpython.com.pdf" target="_blank">
-    <img src="https://img.shields.io/badge/%20Obtener%20Atlas%20📚-28a745?style=for-the-badge&logo=python&logoColor=white" alt="Descargar Atlas">
+    <img src="https://img.shields.io/badge/%20Obtener%20Atlas%20📥-28a745?style=for-the-badge&logo=python&logoColor=white" alt="Descargar Atlas">
   </a>
 </p>
 
