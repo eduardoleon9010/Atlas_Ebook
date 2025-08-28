@@ -25,13 +25,15 @@
 
 📥 **¡Descarga tu Atlas GRATIS!**
 
-  <a href="www.atlasinteractivodeprogramacionenpython.com.pdfO" target="_blank">
+<p align="center">
+  <a href="www.atlasinteractivodeprogramacionenpython.com.pdf" target="_blank">
     <img src="https://img.shields.io/badge/📚%20Obtener%20Atlas-28a745?style=for-the-badge&logo=python&logoColor=white" alt="Descargar Atlas">
   </a>
+</p>
 
 
 
-<h3> ¿Por qué este Atlas es diferente?</h3>
+**¿Por qué este Atlas es diferente?**
 
 <p align="center">
   ✅ Diseñado para autodidactas | ✅ Ejemplos claros | ✅ Comunidad activa
@@ -39,7 +41,7 @@
 
 
 
-<h2 align=""> Vista previa</h2>
+**Vista previa**
 
 <p align="">
   <img src="img/1.1.png" alt="Vista previa del Atlas" width="600"/>
@@ -47,7 +49,7 @@
 
 
 
-<h2 align=""> Política de privacidad</h2>
+**Política de privacidad**
 
 <p align="">
   <a href="docs/politicas-privacidad.md" target="_blank">
@@ -62,7 +64,7 @@
 
 
 
-<h2 align=""> Contacto</h2>
+**Contacto**
 
 <p align="">
   ¿Tienes dudas? Escríbenos a:<br>
@@ -71,7 +73,7 @@
 
 
 
-<h2 align="center"> Visítanos</h2>
+**Visítanos**
 
 <p align="center">
   <a href="https://www.nexatech.org" target="_blank">
