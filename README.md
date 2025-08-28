@@ -51,13 +51,13 @@
 
 **Política de privacidad**
 
-<p align="">
+<p align="center">
   <a href="docs/politicas-privacidad.md" target="_blank">
     <img src="https://img.shields.io/badge/%20Ver%20Política%20de%20Privacidad-0078D7?style=for-the-badge" alt="Política de Privacidad">
   </a>
 </p>
 
-<p align="center">
+<p align="">
   Consulta cómo protegemos y usamos tu información en nuestra
   <a href="doc/politicas-privacidad.md">Política de Privacidad</a>.
 </p>
