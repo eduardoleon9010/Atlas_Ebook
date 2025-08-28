@@ -23,13 +23,12 @@
 </ul>
 
 
-<h2>📥 ¡Descarga tu Atlas GRATIS!</h2>
+📥 **¡Descarga tu Atlas GRATIS!**
 
-<p align="">
-  <a href="https://forms.gle/TU_FORMULARIO" target="_blank">
+  <a href="www.atlasinteractivodeprogramacionenpython.com.pdfO" target="_blank">
     <img src="https://img.shields.io/badge/📚%20Obtener%20Atlas-28a745?style=for-the-badge&logo=python&logoColor=white" alt="Descargar Atlas">
   </a>
-</p>
+
 
 
 <h3> ¿Por qué este Atlas es diferente?</h3>
