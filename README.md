@@ -37,7 +37,7 @@
 
 **¿Por qué este Atlas es diferente?**
 
-<p align="center">
+<p align="">
   ✅ Diseñado para autodidactas | ✅ Ejemplos claros | ✅ Comunidad activa
 </p>
 
