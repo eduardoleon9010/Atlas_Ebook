@@ -194,58 +194,6 @@
             position: relative;
             flex-shrink: 0;
         }
-        
-        /* Nuevos estilos para formulario optimizado */
-        .form-container {
-            max-width: 480px;
-            margin: 0 auto;
-        }
-        
-        .form-step {
-            transition: all 0.4s ease;
-        }
-        
-        .step-indicator {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            gap: 0.5rem;
-        }
-        
-        .step-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #e5e7eb;
-            transition: all 0.3s ease;
-        }
-        
-        .step-dot.active {
-            background-color: #00C4F5;
-            transform: scale(1.2);
-        }
-        
-        .form-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1.5rem;
-        }
-        
-        .progress-bar-form {
-            height: 4px;
-            background-color: #e5e7eb;
-            border-radius: 2px;
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #00C4F5, #005B96);
-            width: 0%;
-            transition: width 0.4s ease;
-            border-radius: 2px;
-        }
     </style>
 </head>
 <body class="font-sans bg-gray-50 overflow-x-hidden antialiased">
@@ -521,7 +469,80 @@
             </div>
         </div>
     </section>
-    
+	
+	<!-- Inicio del contenido del correo -->
+	<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#f5f7fa" style="background-color:#f5f7fa;padding:20px 0;">
+	  <tbody>
+		<tr>
+		  <td>
+			<table align="center" width="570" border="0" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);padding:0 20px;">
+			  <tbody>
+				<tr><td height="30"></td></tr>
+
+				<!-- Saludo -->
+				<tr>
+				  <td align="center" style="font-size:22px;color:#005B96;line-height:28px;font-weight:700;">
+					¡Hola {{ contact.FIRSTNAME | default:'Amigo' }}!
+				  </td>
+				</tr>
+				<tr><td height="15"></td></tr>
+
+				<!-- Mensaje cálido -->
+				<tr>
+				  <td align="center" style="font-size:16px;color:#333333;line-height:26px;">
+					¡Gracias por registrarte y completar nuestro formulario! 🎉<br>
+					Ahora tienes acceso a tu <strong>Atlas Interactivo de Python</strong>, diseñado para aprender de manera práctica, divertida y directa.
+				  </td>
+				</tr>
+				<tr><td height="25"></td></tr>
+
+				<!-- Botón Ver Atlas en línea -->
+				<tr>
+				  <td align="center">
+					<a href="https://heyzine.com/flip-book/818182e95c.html#page/1" target="_blank" style="display:inline-block;padding:14px 28px;background-color:#005B96;color:#ffffff;text-decoration:none;font-weight:bold;border-radius:8px;margin-bottom:12px;font-size:16px;">
+					  🌟 Ver Atlas Interactivo en línea
+					</a>
+				  </td>
+				</tr>
+
+				<!-- Botón Descargar PDF -->
+				<tr>
+				  <td align="center">
+					<a href="https://github.com/eduardoleon9010/Atlas_Ebook/raw/main/www.atlasinteractivodeprogramacionenpython.com.pdf" target="_blank" style="display:inline-block;padding:14px 28px;background-color:#00C4F5;color:#ffffff;text-decoration:none;font-weight:bold;border-radius:8px;font-size:16px;">
+					  📥 Descargar PDF del Atlas
+					</a>
+				  </td>
+				</tr>
+				<tr><td height="30"></td></tr>
+
+				<!-- Mensaje marketing adicional -->
+				<tr>
+				  <td align="center" style="font-size:15px;color:#555555;line-height:24px;">
+					Explora cada sección, prueba los ejemplos y pon en práctica lo que aprendes.<br>
+					Tu camino para dominar Python empieza aquí. 🚀
+				  </td>
+				</tr>
+				<tr><td height="25"></td></tr>
+
+				<!-- Footer -->
+				<tr>
+				  <td align="center" style="font-size:14px;color:#aaaaaa;line-height:24px;">
+					Si tienes preguntas, contáctanos en cualquier momento. ¡Estamos aquí para ayudarte!<br>
+					<strong>Atlas Interactivo & Team</strong>
+				  </td>
+				</tr>
+				<tr><td height="40"></td></tr>
+
+			  </tbody>
+			</table>
+		  </td>
+		</tr>
+	  </tbody>
+	</table>
+	<!-- Fin del contenido del correo -->
+
+
+
     <!-- Sección de CTA final (última oportunidad) -->
     <section class="py-16 bg-gradient-to-r from-primary-light to-primary animate-fadeIn delay-1300">
         <div class="container mx-auto px-4 text-center">
@@ -535,182 +556,6 @@
                 class="inline-block bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform transition-transform wave-effect">
                 Descargar gratis ahora <i class="fas fa-arrow-down ml-1"></i>
             </a>
-        </div>
-    </section>
-    
-    <!-- Sección de formulario optimizada -->
-    <section id="form" class="py-16 bg-white animate-fadeIn delay-1100">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Obtén tu Atlas Interactivo GRATIS</h2>
-                <p class="text-lg md:text-xl text-gray-600">Completa el formulario para recibir instantáneamente tu ebook</p>
-            </div>
-            
-            <div class="form-container bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-100">
-                <div class="progress-bar-form">
-                    <div class="progress-fill" id="formProgress"></div>
-                </div>
-                
-                <div class="step-indicator">
-                    <div class="step-dot active" id="step1Dot"></div>
-                    <div class="step-dot" id="step2Dot"></div>
-                    <div class="step-dot" id="step3Dot"></div>
-                </div>
-                
-                <!-- Paso 1: Información básica -->
-                <div class="form-step" id="step1">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Información básica</h3>
-                    
-                    <div class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo *</label>
-                            <input type="text" id="name" name="name" required
-                                   class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-primary-light"
-                                   placeholder="Tu nombre completo">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico *</label>
-                            <input type="email" id="email" name="email" required
-                                   class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-primary-light"
-                                   placeholder="tu@email.com">
-                        </div>
-                    </div>
-                    
-                    <div class="form-navigation">
-                        <div></div> <!-- Espaciador -->
-                        <button type="button" onclick="nextStep(2)" 
-                                class="bg-gradient-to-r from-primary-light to-primary text-white px-6 py-3 rounded-lg font-medium hover:from-primary hover:to-primary-light transition-all duration-300">
-                            Siguiente <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Paso 2: Intereses -->
-                <div class="form-step hidden" id="step2">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Tu experiencia con Python</h3>
-                    
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-4">¿Cuál es tu nivel de experiencia? *</label>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary-light transition-colors">
-                                    <input type="radio" name="experience" value="beginner" class="mr-3" required>
-                                    <span>Principiante</span>
-                                </label>
-                                <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary-light transition-colors">
-                                    <input type="radio" name="experience" value="intermediate" class="mr-3">
-                                    <span>Intermedio</span>
-                                </label>
-                                <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary-light transition-colors">
-                                    <input type="radio" name="experience" value="advanced" class="mr-3">
-                                    <span>Avanzado</span>
-                                </label>
-                                <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary-light transition-colors">
-                                    <input type="radio" name="experience" value="teacher" class="mr-3">
-                                    <span>Profesor</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-4">¿Qué te interesa aprender? *</label>
-                            <div class="space-y-2">
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="interests" value="basics" class="checkbox mr-3">
-                                    <span>Fundamentos de Python</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="interests" value="web" class="checkbox mr-3">
-                                    <span>Desarrollo Web (Django/Flask)</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="interests" value="data" class="checkbox mr-3">
-                                    <span>Análisis de Datos</span>
-                                </label>
-                                <label class="flex items-center">
-                                    <input type="checkbox" name="interests" value="ai" class="checkbox mr-3">
-                                    <span>Inteligencia Artificial</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-navigation">
-                        <button type="button" onclick="prevStep(1)" 
-                                class="text-gray-600 px-6 py-3 rounded-lg font-medium hover:text-gray-800 transition-colors">
-                            <i class="fas fa-arrow-left mr-2"></i> Atrás
-                        </button>
-                        <button type="button" onclick="nextStep(3)" 
-                                class="bg-gradient-to-r from-primary-light to-primary text-white px-6 py-3 rounded-lg font-medium hover:from-primary hover:to-primary-light transition-all duration-300">
-                            Siguiente <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Paso 3: Confirmación y envío -->
-                <div class="form-step hidden" id="step3">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">¡Último paso!</h3>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <i class="fas fa-info-circle text-blue-500 text-lg"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-sm text-blue-700">
-                                        Al completar el formulario, recibirás inmediatamente el Atlas Interactivo en tu correo y acceso a todos los recursos.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="flex items-start">
-                                <input type="checkbox" id="consent" name="consent" required class="checkbox mt-1 mr-3">
-                                <span class="text-sm text-gray-600">
-                                    Acepto recibir información sobre cursos, tutoriales y contenido educativo relacionado con Python. 
-                                    Puedo darme de baja en cualquier momento.
-                                </span>
-                            </label>
-                        </div>
-                        
-                        <div>
-                            <label class="flex items-start">
-                                <input type="checkbox" id="terms" name="terms" required class="checkbox mt-1 mr-3">
-                                <span class="text-sm text-gray-600">
-                                    He leído y acepto los 
-                                    <a href="#" class="text-primary-light hover:text-primary">términos y condiciones</a> 
-                                    y la 
-                                    <a href="#" class="text-primary-light hover:text-primary">política de privacidad</a>.
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-navigation mt-6">
-                        <button type="button" onclick="prevStep(2)" 
-                                class="text-gray-600 px-6 py-3 rounded-lg font-medium hover:text-gray-800 transition-colors">
-                            <i class="fas fa-arrow-left mr-2"></i> Atrás
-                        </button>
-                        <button type="submit" 
-                                class="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300 relative overflow-hidden">
-                            <span id="btnText">🎓 Obtener mi Atlas Gratis</span>
-                            <span id="btnSpinner" class="hidden absolute inset-0 flex items-center justify-center bg-green-600">
-                                <i class="fas fa-spinner fa-spin"></i>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-8">
-                <p class="text-sm text-gray-500">
-                    <i class="fas fa-lock mr-1"></i>
-                    Tus datos están protegidos y no serán compartidos con terceros
-                </p>
-            </div>
         </div>
     </section>
     
@@ -763,13 +608,40 @@
         </div>
     </section>
     
-    <!-- Pie de página optimizado -->
+    <!-- Pie de página -->
     <footer class="bg-gray-900 text-white py-12 animate-fadeIn delay-1700">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
+                <div>
                     <div class="text-2xl font-bold gradient-text mb-4">Atlas Python</div>
-                    <p class="text-gray-400 mb-4">La mejor manera de aprender programación en Python de forma interactiva y práctica.</p>
+                    <p class="text-gray-400">La mejor manera de aprender programación en Python de forma interactiva y práctica.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Enlaces útiles</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Beneficios</a></li>
+                        <li><a href="#form" class="text-gray-400 hover:text-white transition-colors">Descargar Atlas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <a href="mailto:atlasinteractivodeprogramacion@gmail.com" class="text-gray-400 hover:text-white transition-colors">atlasinteractivodeprogramacion@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-2 text-gray-400"></i>
+                            <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook" class="text-gray-400 hover:text-white transition-colors">+57 305 4874612</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Síguenos</h3>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#3b5998] transition-colors" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
@@ -785,47 +657,6 @@
                         </a>
                     </div>
                 </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Enlaces rápidos</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors flex items-center">
-                            <i class="fas fa-arrow-right mr-2 text-xs"></i> Beneficios
-                        </a></li>
-                        <li><a href="#form" class="text-gray-400 hover:text-white transition-colors flex items-center">
-                            <i class="fas fa-arrow-right mr-2 text-xs"></i> Descargar Atlas
-                        </a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center">
-                            <i class="fas fa-arrow-right mr-2 text-xs"></i> Preguntas frecuentes
-                        </a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center">
-                            <i class="fas fa-arrow-right mr-2 text-xs"></i> Blog
-                        </a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Contacto</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope mr-3 text-gray-400 mt-1"></i>
-                            <a href="mailto:atlasinteractivodeprogramacion@gmail.com" class="text-gray-400 hover:text-white transition-colors">
-                                atlasinteractivodeprogramacion@gmail.com
-                            </a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fab fa-whatsapp mr-3 text-gray-400 mt-1"></i>
-                            <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook" 
-                               class="text-gray-400 hover:text-white transition-colors">
-                                +57 305 4874612
-                            </a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mr-3 text-gray-400 mt-1"></i>
-                            <span class="text-gray-400">Colombia</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
             
             <div class="border-t border-gray-800 pt-8">
@@ -834,7 +665,6 @@
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Términos</a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacidad</a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookies</a>
                     </div>
                 </div>
             </div>
@@ -850,10 +680,6 @@
          * Inicialización de la página y configuración de efectos
          * Documentación completa en español para mantenimiento
          */
-        
-        // Variables globales para el formulario
-        let currentStep = 1;
-        const totalSteps = 3;
         
         // Esperar a que el DOM esté completamente cargado
         document.addEventListener('DOMContentLoaded', function() {
@@ -1061,7 +887,7 @@
             /**
              * Manejo optimizado del formulario
              */
-            const form = document.querySelector('.form-container');
+            const form = document.getElementById('ebookForm');
             if (form) {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
@@ -1079,7 +905,6 @@
                     const nameInput = document.getElementById('name');
                     const emailInput = document.getElementById('email');
                     const consentInput = document.getElementById('consent');
-                    const termsInput = document.getElementById('terms');
                     
                     let isValid = true;
                     
@@ -1095,11 +920,6 @@
                     
                     if (!consentInput.checked) {
                         consentInput.focus();
-                        isValid = false;
-                    }
-                    
-                    if (!termsInput.checked) {
-                        termsInput.focus();
                         isValid = false;
                     }
                     
@@ -1135,25 +955,21 @@
                         });
                         
                         // En producción, aquí se enviaría el formulario realmente
-                        // this.submit();
+                        this.submit();
                         
                         // Descargar automáticamente después de 2 segundos
                         setTimeout(() => {
                             const downloadLink = document.createElement('a');
-                            downloadLink.href = 'https://github.com/eduardoleon9010/Atlas_Ebook/raw/main/www.atlasinteractivodeprogramacionenpython.com.pdf';
+                            downloadLink.href = 'atlas-python.pdf';
                             downloadLink.download = 'Atlas-Interactivo-Python.pdf';
-                            downloadLink.target = '_blank';
                             document.body.appendChild(downloadLink);
                             downloadLink.click();
                             document.body.removeChild(downloadLink);
-                            
-                            // Abrir versión interactiva
-                            window.open('https://heyzine.com/flip-book/818182e95c.html#page/1', '_blank');
                         }, 2000);
                         
                         // Reiniciar el formulario después de un tiempo
                         setTimeout(() => {
-                            resetForm();
+                            this.reset();
                             submitBtn.disabled = false;
                             btnText.textContent = '🎓 Obtener mi Atlas Gratis';
                             btnSpinner.classList.add('hidden');
@@ -1194,105 +1010,6 @@
                 });
             });
         });
-        
-        // Funciones para el formulario de múltiples pasos
-        function updateProgress() {
-            const progressFill = document.getElementById('formProgress');
-            const progressPercentage = (currentStep / totalSteps) * 100;
-            progressFill.style.width = `${progressPercentage}%`;
-            
-            // Actualizar indicadores de paso
-            for (let i = 1; i <= totalSteps; i++) {
-                const stepDot = document.getElementById(`step${i}Dot`);
-                if (stepDot) {
-                    if (i <= currentStep) {
-                        stepDot.classList.add('active');
-                    } else {
-                        stepDot.classList.remove('active');
-                    }
-                }
-            }
-        }
-        
-        function nextStep(step) {
-            // Validar el paso actual antes de avanzar
-            if (step === 2) {
-                const nameInput = document.getElementById('name');
-                const emailInput = document.getElementById('email');
-                
-                if (!nameInput.value.trim() || nameInput.value.length < 2) {
-                    nameInput.focus();
-                    nameInput.classList.add('border-red-500');
-                    return;
-                }
-                
-                if (!emailInput.value || !emailInput.validity.valid) {
-                    emailInput.focus();
-                    emailInput.classList.add('border-red-500');
-                    return;
-                }
-            }
-            
-            if (step === 3) {
-                const experienceInputs = document.querySelectorAll('input[name="experience"]');
-                let experienceSelected = false;
-                
-                experienceInputs.forEach(input => {
-                    if (input.checked) experienceSelected = true;
-                });
-                
-                if (!experienceSelected) {
-                    Swal.fire({
-                        title: 'Información requerida',
-                        text: 'Por favor selecciona tu nivel de experiencia',
-                        icon: 'warning',
-                        confirmButtonColor: '#00C4F5'
-                    });
-                    return;
-                }
-            }
-            
-            document.getElementById(`step${currentStep}`).classList.add('hidden');
-            document.getElementById(`step${step}`).classList.remove('hidden');
-            currentStep = step;
-            updateProgress();
-            
-            // Scroll suave al formulario
-            document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        
-        function prevStep(step) {
-            document.getElementById(`step${currentStep}`).classList.add('hidden');
-            document.getElementById(`step${step}`).classList.remove('hidden');
-            currentStep = step;
-            updateProgress();
-        }
-        
-        function resetForm() {
-            // Reiniciar a paso 1
-            for (let i = 1; i <= totalSteps; i++) {
-                document.getElementById(`step${i}`).classList.add('hidden');
-            }
-            document.getElementById('step1').classList.remove('hidden');
-            currentStep = 1;
-            updateProgress();
-            
-            // Limpiar campos
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.querySelectorAll('input[name="experience"]').forEach(input => input.checked = false);
-            document.querySelectorAll('input[name="interests"]').forEach(input => input.checked = false);
-            document.getElementById('consent').checked = false;
-            document.getElementById('terms').checked = false;
-            
-            // Limpiar clases de validación
-            document.querySelectorAll('.form-input').forEach(input => {
-                input.classList.remove('border-red-500', 'border-green-500');
-            });
-        }
-        
-        // Inicializar progreso del formulario
-        updateProgress();
     </script>
 </body>
 </html>
