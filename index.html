@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descarga gratis el Atlas Interactivo de Programación en Python. Aprende Python desde cero con nuestra guía práctica y visual.">
     <meta name="keywords" content="Python, programación, aprender Python, curso Python gratis, atlas interactivo">
-    <meta name="author" content="Eduardo Leon">
+    <meta name="author" content="Atlas Interactivo de Programación">
     
     <!-- Preconexión y precarga de recursos críticos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon (recomendado para producción) -->
-    <link rel="icon" href="img/favic.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>">
     
     <!-- Tailwind CSS (usando CDN solo para desarrollo, en producción usar PostCSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -88,7 +88,7 @@
             color: transparent;
         }
         
-        /* Efecto 3D para la portada del Atlas */
+        /* Efecto 3D para la portada del ebook */
         .ebook-cover {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
@@ -204,8 +204,8 @@
     <div id="particles-js" class="fixed w-full h-full top-0 left-0 -z-10"></div>
     
     <!-- Botón flotante de WhatsApp (optimizado para CTA) -->
-    <div class="fixed top-1/2 right-6 transform -translate-y-1/2">
-        <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20Atlas"
+    <div class="fixed bottom-6 right-6 z-50 group">
+        <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook"
            class="w-16 h-16 bg-[#25D366] flex items-center justify-center rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 animate-float"
            target="_blank" aria-label="Contactar por WhatsApp">
             <i class="fab fa-whatsapp text-white text-2xl"></i>
@@ -218,7 +218,7 @@
     
     <!-- Encabezado (sticky para mejor navegación) -->
     <header class="container mx-auto px-4 py-4 md:py-6 flex justify-between items-center sticky top-0 bg-white bg-opacity-95 backdrop-blur-sm z-40 shadow-sm transition-all duration-300">
-        <div class="text-2xl font-bold gradient-text hover:animate-wiggle">Bienvenid@s</div>
+        <div class="text-2xl font-bold gradient-text hover:animate-wiggle">Atlas Python</div>
         <a href="#form"
            class="bg-gradient-to-r from-primary-light to-primary text-white px-6 py-2 md:px-8 md:py-3 rounded-full font-bold text-base md:text-lg hover:from-primary hover:to-primary-light transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform transition-transform wave-effect">
             Obtener Atlas Interactivo
@@ -232,7 +232,7 @@
                 Domina Python con el <span class="gradient-text">Atlas Interactivo</span> <span class="text-primary">GRATIS</span>
             </h1>
             <p class="text-xl text-gray-600 mb-8">
-                La guía definitiva para aprender Python desde cero hasta nivel internedio Contiene 13 secciones con ejemplos prácticos, ejercicios interactivos y proyectos reales.
+                La guía definitiva para aprender Python desde cero hasta nivel avanzado. Más de 120 páginas con ejemplos prácticos, ejercicios interactivos y proyectos reales.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 mb-12">
@@ -268,22 +268,23 @@
                         </div>
                         <span class="ml-2 text-gray-600">4.8/5</span>
                     </div>
-                    <p class="text-gray-600 text-sm sm:text-base"><span class="font-bold text-gray-800">+1,000 estudiantes</span> ya mejoraron sus habilidades</p>
+                    <p class="text-gray-600 text-sm sm:text-base"><span class="font-bold text-gray-800">+5,000 estudiantes</span> ya mejoraron sus habilidades</p>
                 </div>
             </div>
         </div>
         
-        <!-- Imagen del producto (Atlas) -->
+        <!-- Imagen del producto (ebook) -->
         <div class="md:w-1/2 animate-fadeIn delay-200">
             <div class="relative max-w-md mx-auto">
                 <div class="absolute -inset-4 bg-gradient-to-r from-primary-light to-primary rounded-2xl opacity-75 blur-xl animate-pulse"></div>
                 <div class="relative bg-white rounded-xl overflow-hidden shadow-2xl ebook-cover transform hover:shadow-primary/20">
-                    <img src="img/1.png"
+                    <img src="https://via.placeholder.com/500x700/306998/FFFFFF?text=Atlas+Python"
                           alt="Portada del Atlas Interactivo de Python"
                           class="w-full h-auto"
                           loading="lazy">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 text-blue">
-                        <h3 class="text-xl font-bold">Edición 2024</h3>
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 text-white">
+                        <h3 class="text-xl font-bold">Edición 2023</h3>
+                        <p class="text-sm opacity-90">Actualizado con las últimas características de Python</p>
                     </div>
                     <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full font-bold text-sm transform rotate-12 shadow-lg">
                         ¡GRATIS!
@@ -303,7 +304,7 @@
                 </div>
                 <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 transform">
                     <div class="text-3xl md:text-4xl font-bold text-primary mb-2" id="pagesCounter">0</div>
-                    <p class="text-gray-600 text-sm md:text-base">Secciones</p>
+                    <p class="text-gray-600 text-sm md:text-base">Páginas</p>
                 </div>
                 <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 transform">
                     <div class="text-3xl md:text-4xl font-bold text-primary mb-2" id="exercisesCounter">0</div>
@@ -311,7 +312,7 @@
                 </div>
                 <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 transform">
                     <div class="text-3xl md:text-4xl font-bold text-primary mb-2" id="projectsCounter">0</div>
-                    <p class="text-gray-600 text-sm md:text-base">Proyecto final</p>
+                    <p class="text-gray-600 text-sm md:text-base">Proyectos</p>
                 </div>
             </div>
         </div>
@@ -470,73 +471,26 @@
     </section>
 	
 	<!-- Inicio del contenido del correo -->
-	<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#f5f7fa" style="background-color:#f5f7fa;padding:20px 0;">
-	  <tbody>
-		<tr>
-		  <td>
-			<table align="center" width="570" border="0" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);padding:0 20px;">
-			  <tbody>
-				<tr><td height="30"></td></tr>
+	<section id="registro" class="bg-gray-100 py-12">
+	  <div class="container mx-auto px-4 text-center">
+		<h2 class="text-3xl font-bold text-gray-800 mb-4">📥 Obtén tu Atlas Interactivo</h2>
+		<p class="text-gray-600 mb-6">Completa el formulario y recibe el atlas directamente en tu correo electrónico.</p>
+		
+		<div style="display:flex; justify-content:center;">
+		  <iframe src="https://docs.google.com/forms/d/e/TU_ID_DE_FORM/viewform?embedded=true" 
+				  width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0" 
+				  style="border-radius:12px; border: 1px solid #ddd;">
+			Cargando…
+		  </iframe>
+		</div>
+		
+		<p class="mt-4 text-sm text-gray-500">
+		  Al enviar este formulario, aceptas nuestra 
+		  <a href="docs/politicas-privacidad.md" class="text-primary font-semibold hover:underline">Política de Privacidad</a>.
+		</p>
+	  </div>
+	</section>
 
-				<!-- Saludo -->
-				<tr>
-				  <td align="center" style="font-size:22px;color:#005B96;line-height:28px;font-weight:700;">
-					¡Hola Amigos!
-				  </td>
-				</tr>
-				<tr><td height="15"></td></tr>
-
-				<!-- Mensaje cálido -->
-				<tr>
-				  <td align="center" style="font-size:16px;color:#333333;line-height:26px;">
-					¡Gracias por registrarte y completar nuestro formulario! 🎉<br>
-					Ahora tienes acceso a tu <strong>Atlas Interactivo de Python</strong>, diseñado para aprender de manera práctica, divertida y directa.
-				  </td>
-				</tr>
-				<tr><td height="25"></td></tr>
-
-				<!-- Botón Ver Atlas en línea -->
-				<tr>
-				  <td align="center">
-					<a href="https://heyzine.com/flip-book/818182e95c.html#page/1" target="_blank" style="display:inline-block;padding:14px 28px;background-color:#005B96;color:#ffffff;text-decoration:none;font-weight:bold;border-radius:8px;margin-bottom:12px;font-size:16px;">
-					   Ver Atlas Interactivo en línea
-					</a>
-				  </td>
-				</tr>
-
-				<!-- Botón Descargar PDF -->
-				<tr>
-				  <td align="center">
-					<a href="https://github.com/eduardoleon9010/Atlas_Ebook/raw/main/www.atlasinteractivodeprogramacionenpython.com.pdf" target="_blank" style="display:inline-block;padding:14px 28px;background-color:#00C4F5;color:#ffffff;text-decoration:none;font-weight:bold;border-radius:8px;font-size:16px;">
-					   Descargar PDF del Atlas
-					</a>
-				  </td>
-				</tr>
-				<tr><td height="30"></td></tr>
-
-				<!-- Mensaje marketing adicional -->
-				<tr>
-				  <td align="center" style="font-size:15px;color:#555555;line-height:24px;">
-					Explora cada sección, prueba los ejemplos y pon en práctica lo que aprendes.<br>
-					Tu camino para dominar Python empieza aquí.				  </td>
-				</tr>
-				<tr><td height="25"></td></tr>
-
-				<!-- Footer -->
-				<tr>
-				  <td align="center" style="font-size:14px;color:#aaaaaa;line-height:24px;">
-					Si tienes preguntas, contáctanos en cualquier momento. ¡Estamos aquí para ayudarte!<br>
-					<strong>Atlas Interactivo & Team</strong>
-				  </td>
-				</tr>
-				<tr><td height="40"></td></tr>
-
-			  </tbody>
-			</table>
-		  </td>
-		</tr>
-	  </tbody>
-	</table>
 	<!-- Fin del contenido del correo -->
 
 
@@ -548,9 +502,9 @@
                 ¿Listo para dominar Python con nuestro Atlas Interactivo?
             </h2>
             <p class="text-lg md:text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
-                Únete a más de 1,000 estudiantes que ya están aprendiendo Python de manera efectiva.
+                Únete a más de 5,000 estudiantes que ya están aprendiendo Python de manera efectiva.
             </p>
-            <a href="https://github.com/eduardoleon9010/Atlas_Ebook/raw/main/www.atlasinteractivodeprogramacionenpython.com.pdf"
+            <a href="#form"
                 class="inline-block bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 transform transition-transform wave-effect">
                 Descargar gratis ahora <i class="fas fa-arrow-down ml-1"></i>
             </a>
@@ -619,7 +573,7 @@
                     <h3 class="text-lg font-bold mb-4">Enlaces útiles</h3>
                     <ul class="space-y-2">
                         <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Beneficios</a></li>
-                        <li><a href="https://github.com/eduardoleon9010/Atlas_Ebook/raw/main/www.atlasinteractivodeprogramacionenpython.com.pdf" class="text-gray-400 hover:text-white transition-colors">Descargar Atlas</a></li>
+                        <li><a href="#form" class="text-gray-400 hover:text-white transition-colors">Descargar Atlas</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Preguntas frecuentes</a></li>
                     </ul>
                 </div>
@@ -628,14 +582,13 @@
                     <h3 class="text-lg font-bold mb-4">Contacto</h3>
                     <ul class="space-y-2">
                         <li class="flex items-center">
-                            <i class="fab fa-whatsapp mr-2 text-gray-400"></i>
-                            <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook" class="text-gray-400 hover:text-white transition-colors">+57 305 4874612</a>
-                        </li>
-							
-							<i class="fas fa-envelope mr-2 text-gray-400"></i>
+                            <i class="fas fa-envelope mr-2 text-gray-400"></i>
                             <a href="mailto:atlasinteractivodeprogramacion@gmail.com" class="text-gray-400 hover:text-white transition-colors">atlasinteractivodeprogramacion@gmail.com</a>
                         </li>
                         <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-2 text-gray-400"></i>
+                            <a href="https://api.whatsapp.com/send/?phone=573054874612&text=Hola%20quiero%20más%20información%20del%20ebook" class="text-gray-400 hover:text-white transition-colors">+57 305 4874612</a>
+                        </li>
                     </ul>
                 </div>
                 
@@ -660,7 +613,7 @@
             
             <div class="border-t border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 mb-4 md:mb-0 text-sm">© 2024 Atlas Interactivo de Programación en Python. Todos los derechos reservados.</p>
+                    <p class="text-gray-400 mb-4 md:mb-0 text-sm">© 2023 Atlas Interactivo de Programación. Todos los derechos reservados.</p>
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Términos</a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacidad</a>
@@ -828,10 +781,10 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        animateCounter('studentsCounter', "+" 1000);
-                        animateCounter('pagesCounter', 13);
-                        animateCounter('exercisesCounter', + 30);
-                        animateCounter('projectsCounter', 1);
+                        animateCounter('studentsCounter', 5000);
+                        animateCounter('pagesCounter', 120);
+                        animateCounter('exercisesCounter', 85);
+                        animateCounter('projectsCounter', 12);
                         observer.unobserve(entry.target);
                     }
                 });
@@ -1012,14 +965,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
