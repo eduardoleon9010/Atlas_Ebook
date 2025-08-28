@@ -8,7 +8,7 @@
   <em>13 secciones, ejercicios prácticos, proyectos reales y contenido actualizado.</em>
 </p>
 
- **¿Qué obtendrás?**
+ <h4 align="center">¿Qué obtendrás?</h4>
 
 <ul>
   ✅ Aprende Python desde lo básico hasta nivel avanzado
