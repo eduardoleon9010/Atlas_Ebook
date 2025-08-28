@@ -4,9 +4,9 @@
   <img src="img/Atlas Interactivo.jpg" alt="Vista previa del Atlas" width="600"/>
 </p>
 
-<strong align="center">Aprende Python desde cero hasta avanzado con nuestra guía interactiva GRATUITA</strong><br>
+<p align="center">Aprende Python desde cero hasta avanzado con nuestra guía interactiva GRATUITA</strong><br>
   <em>13 secciones, ejercicios prácticos, proyectos reales y contenido actualizado.</em>
-
+</p>
 
 <h2> ¿Qué obtendrás?</h2>
 
@@ -43,7 +43,7 @@
 <h2 align=""> Vista previa</h2>
 
 <p align="">
-  <img src="img/portadaebook-removebg-preview.png" alt="Vista previa del Atlas" width="600"/>
+  <img src="img/1.1.png" alt="Vista previa del Atlas" width="600"/>
 </p>
 
 
