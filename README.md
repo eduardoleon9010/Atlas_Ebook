@@ -1,4 +1,4 @@
-<h1 align="center"> Atlas Interactivo de Python – NexaTech</h1>
+<h1 align="center"> Atlas Interactivo de Programacion en Python</h1>
 
 <p align="center">
   <img src="img/Baner1.jpg" alt="Vista previa del Atlas" width="600"/>
