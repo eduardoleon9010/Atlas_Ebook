@@ -828,9 +828,9 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        animateCounter('studentsCounter', 1000);
+                        animateCounter('studentsCounter', +1000);
                         animateCounter('pagesCounter', 13);
-                        animateCounter('exercisesCounter', 30);
+                        animateCounter('exercisesCounter', +30);
                         animateCounter('projectsCounter', 1);
                         observer.unobserve(entry.target);
                     }
@@ -1012,6 +1012,7 @@
     </script>
 </body>
 </html>
+
 
 
 
