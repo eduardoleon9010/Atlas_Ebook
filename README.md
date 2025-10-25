@@ -46,7 +46,7 @@
 **Vista previa**
 
 <p align="center">
-  <img src="img/1.1.png" alt="Vista previa del Atlas" width="600"/>
+  <img src="img/caratulaL.jpeg" alt="Vista previa del Atlas" width="600"/>
 </p>
 
 
