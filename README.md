@@ -78,7 +78,7 @@
 **Visítanos**
 
 <p align="center">
-  <a href="[https://www.nexatech.org](https://indigo-capybara-479767.hostingersite.com/index.html)" target="_blank">
+  <a href="https://indigo-capybara-479767.hostingersite.com/index.html" target="_blank">
     <img src="https://img.shields.io/badge/%20Visitar%20NexaTech-ff9800?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Visitar NexaTech">
   </a>
 </p>
